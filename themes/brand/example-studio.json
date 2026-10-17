@@ -1,0 +1,20 @@
+{
+  "themeSpec": "theme-spec/0.1",
+  "profile": "sphere-theme/0.1",
+  "id": "example-studio",
+  "name": "Example Studio（架空）",
+  "version": "0.1.0",
+  "layer": "brand",
+  "description": "架空組織の配色サンプル。実在の組織・ブランドとは関係ありません。",
+  "tokens": {
+    "light": {
+      "accent": "#5A3D8C"
+    },
+    "dark": {
+      "accent": "#C7B6F2"
+    },
+    "typography": {
+      "ui": "sans"
+    }
+  }
+}

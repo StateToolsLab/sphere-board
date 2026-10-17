@@ -1,0 +1,3 @@
+# Optional development-only verification; not needed to use the app or CLI.
+playwright==1.57.0
+jsonschema==4.26.0

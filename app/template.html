@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src data: blob:; base-uri 'none'; form-action 'none'">
+<title>Sphere Board — 進められる地図</title>
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<a class="skip" href="#content">本文へ移動</a>
+<header class="topbar">
+  <div class="identity"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><ellipse cx="18" cy="18" rx="7" ry="14"/><path d="M4 18h28M8 9c8 5 12 5 20 0M8 27c8-5 12-5 20 0"/></svg><div><strong>SPHERE BOARD</strong><span>OPEN PLANS. YOUR WORLD.</span></div></div>
+  <div class="top-actions"><span class="version">0.5.1</span><button id="open-map" class="button primary">map.json を開く</button><button id="open-settings" class="button settings-button" aria-haspopup="dialog"><span aria-hidden="true">⚙</span><span>設定</span></button></div>
+</header>
+<main id="content">
+  <section class="intro">
+    <div><div class="eyebrow"><span class="tiny-orbit" aria-hidden="true"></span> YOUR SHARED PLAN MAP</div><h1 id="project-title">Sphere Board</h1><p id="project-desc">構造を保って、見た目を自由に。map.json を読み込んでください。</p></div>
+    <div class="connection"><span id="connection-label">内蔵デモ · 未接続</span><span id="revision-label">revision 0</span></div>
+  </section>
+  <div class="notice" id="notice" role="status" aria-live="polite" hidden></div>
+  <div id="projection-note" class="projection-note" hidden></div>
+  <section class="workspace" aria-label="進行マップ">
+    <div class="map-column">
+      <div class="map-toolbar">
+        <div class="view-tabs" role="group" aria-label="表示形式"><button id="view-map" class="tab active" aria-pressed="true">Sphere Board</button><button id="view-list" class="tab" aria-pressed="false">一覧</button></div>
+        <div class="map-summary" id="map-summary"></div>
+        <span class="skin-label" id="skin-label">Core Plain</span>
+      </div>
+      <div class="focus-toolbar"><strong id="current-count">現在地 0</strong><span id="ready-count">取れる珠 0</span><span id="current-position" class="current-position">現在地 —/0</span><button id="go-current" class="button small">現在地へ</button></div>
+      <div id="region-key" class="region-key" aria-label="内側から外側への工程順"></div>
+      <div id="focus-description" class="focus-description" role="status"></div>
+      <div class="readonly-note" id="readonly-note">この盤は見るだけです。直すのは元の台帳（または map.json）です。</div>
+      <div id="board-wrap" class="board-wrap">
+        <div class="board-scroll" id="board-scroll" tabindex="0" aria-label="マップ。Tabで盤に入り、矢印キーで近い珠へ移動、Enterで選択、Escで戻れます。ドラッグ・ピンチでも移動できます。">
+          <svg id="board" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Sphere Board（スフィアボード）。ノードを選ぶと詳細を表示します。"></svg>
+        </div>
+        <div class="board-foot"><span id="board-help">ノードを選んで詳細へ · 座標は固定</span><div class="zoom-controls"><button id="zoom-out" class="icon-button" aria-label="縮小">−</button><span id="zoom-label">100%</span><button id="zoom-in" class="icon-button" aria-label="拡大">＋</button><button id="zoom-fit" class="button small">全体</button><button id="zoom-read" class="button small">初めの表示</button></div></div>
+      </div>
+      <div id="list-wrap" class="list-wrap" hidden><label class="search-label">ノードを検索<input id="search" type="search" placeholder="名前・ID・担当者" autocomplete="off"></label><div id="node-list"></div></div>
+      <div class="legend" aria-label="意味の凡例"><span>◎ 現在地</span><span>⊹ 取れる珠</span><span>◇ Gate</span><span>━ 親子</span><span>工程・フェーズへの所属は領域で表す</span><span>━▶ 前提→後続</span><span>··▷ 起点</span><span>↩ 回収先</span><span>┄⊣ 妨げ</span></div>
+      <div id="lane-legend" class="lane-legend" aria-label="レーン（色は担当レーンの順、状態ではありません）"></div>
+      <details class="state-legend"><summary>状態の形とゲートの結果 · 色はレーンに使用</summary><div id="state-legend"></div></details>
+    </div>
+    <aside id="detail-panel" class="detail-panel" aria-label="ノード詳細と現在地">
+      <div class="panel-heading"><span id="panel-eyebrow">CURRENT POSITIONS</span><button id="clear-selection" class="icon-button" aria-label="選択を解除" hidden>×</button></div>
+      <div id="details"></div>
+    </aside>
+  </section>
+  <section id="problems" class="problems" aria-label="入力の確認事項" role="status" hidden></section>
+  <footer class="page-footer"><span>計画はデータに。世界観はスキンに。</span><span id="integrity">READ-ONLY VIEWER · LOCAL FIRST</span></footer>
+</main>
+<dialog id="settings" class="drawer" aria-labelledby="settings-title">
+  <div class="drawer-header"><div><span class="eyebrow">MAKE IT YOURS</span><h2 id="settings-title">表示とスキン</h2></div><button id="close-settings" class="icon-button" aria-label="設定を閉じる">×</button></div>
+  <div class="drawer-body">
+    <section class="setting-section"><h3>World theme</h3><p>意味はそのままに、世界観だけを切り替える。</p><div id="theme-grid" class="theme-grid"></div></section>
+    <section class="setting-section"><h3>Brand layer</h3><label class="field-label">組織のアクセント<select id="brand"><option value="none">なし / Core</option><option value="example-studio">Example Studio（架空）</option></select></label><p class="small-note">Example Studio は架空の組織です。配色はテーマ機構を試すためのサンプルです。</p></section>
+    <section class="setting-section"><h3>Appearance</h3><div class="two-fields"><label class="field-label">明暗<select id="mode"><option value="light">Light</option><option value="dark">Dark</option></select></label><label class="field-label">コントラスト<select id="contrast"><option value="normal">標準</option><option value="high">高コントラスト</option></select></label></div><p class="small-note">文字・線の見分けやすさを優先し、必要な色を補正します。モーションは使用しません。</p></section>
+    <section class="setting-section"><h3>Your own skin</h3><div class="button-row"><button id="import-theme" class="button">theme.json を読み込む</button><button id="export-theme" class="button">Worldを書き出す</button></div><p class="small-note" id="custom-theme-note">JSONのみ。CSS・JavaScript・外部画像は受け付けません。</p></section>
+    <details class="setting-section lab"><summary>Theme Lab <span>検証・開発者向け</span></summary><label class="field-label">盤面のプレビュー幅<select id="viewport"><option value="auto">画面に合わせる</option><option value="375">375 px</option><option value="768">768 px</option></select></label><h4>解決後tokens / 検証結果</h4><pre id="diagnostics"></pre></details>
+    <details class="setting-section lab"><summary>データと接続 <span>map.json</span></summary><label class="check"><input type="checkbox" id="auto-reload" checked> ローカルサーバーのmapを定期的に読み直す</label><p class="small-note">手動で開いたファイルは、その読込時点の表示です。sphere-starter/0.3 の map.json だけを読みます。直接の上書き保存やAIの自動起動は行いません。</p><div class="button-row"><button id="reload" class="button">サーバーを再読込</button><button id="export-map" class="button">mapを書き出す</button><button id="load-demo" class="button">内蔵デモへ戻す</button></div><pre id="data-diagnostics"></pre></details>
+  </div>
+</dialog>
+<input id="map-file" class="file-input" type="file" accept=".json,application/json" aria-label="map JSONファイル">
+<input id="theme-file" class="file-input" type="file" accept=".json,application/json" aria-label="theme JSONファイル">
+<noscript><div class="boot-error">このビューアの操作にはJavaScriptが必要です。map.json自体はテキストエディターでも読めます。</div></noscript>
+<script>/*__STATES__*/</script>
+<script>/*__CORE__*/</script>
+<script>/*__LAYOUT__*/</script>
+<script>/*__CAMERA__*/</script>
+<script>const SPHERE_BUNDLE = /*__BUNDLE__*/;</script>
+<script>/*__APP__*/</script>
+</body></html>

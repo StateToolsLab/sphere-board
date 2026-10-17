@@ -1,0 +1,187 @@
+# Sphere Board short paper — 照合記録
+
+著者・権利者：StateToolsLab  
+原稿：version 1.0（確定版）  
+調査・照合日：2026-10-07（draft 0.1／draft 0.2 の記録）  
+ユーザーレビュー確定日：2026-10-08  
+公開日：2026-10-17  
+License: CC BY 4.0
+
+本記録は draft 0.1／draft 0.2 の調査・照合記録を継承し、2026-10-08 のユーザー判定「下の直しを入れて確定」を反映したもの。英語本文・日本語訳・図・本記録を version 1.0 とする。参照実装は Sphere Board v0.5.1、配布アーカイブ名は `sphere-board-v0.5.1.zip` とした。v0.5.1 の変更内容はユーザーの版説明に基づき、アーカイブそのものの照合は行っていない。
+
+実装の閲読および57件のテスト通過の根拠は、旧版で記録した v0.5.0 公開候補の検証である。draft 0.2 で再確認した範囲と取得できなかった出典は (a)・(e) に残し、旧版の閲読・テストを今回の新しい実行結果とはしない。version 1.0 への確定作業では外部出典の再取得、実装テスト、ブラウザ検証、公開・外部送信、実装コードの変更を行っていない。今回の文書・図の確認は末尾に記録する。
+
+## (a) 先行例の出典と閲読範囲
+
+「一次本文・該当節」は検索要約だけでなく、元の本文を開いて該当箇所を読んだことを示す。長い論文やマニュアルの全文を読んだという意味ではない。「公式説明」は当該実装・方法の説明者による文書であり、原著論文そのものとは区別する。以下は旧版から引き継いだ記録であり、記録上の閲覧日は **2026-10-07**。version 1.0 への確定作業による新たな閲覧を意味しない。
+
+| 先行例 | 本文の出典・URL | 閲読範囲／一次・二次の区別 | 確認した内容・保留点 |
+|---|---|---|---|
+| 双六 | [1] 国立国会図書館「振り出し」 https://www.ndl.go.jp/kaleido/entry/12/ | 公的展示解説の本文を全文閲読。歴史解説であり、ゲーム原規則の一次史料ではない | 廻り双六は順番に進み、飛び双六には離れたマスへの移動がある。「双六は常に一本道」とは書かない |
+| ツリー・WBS | [2] NASA Software Engineering Handbook Ver B, §7.5 https://swehb.nasa.gov/pages/viewpage.action?pageId=129990996 | NASAの公式本文、Purpose／Basic WBSの該当節。リンク先のWBS Handbook全文は未読 | 階層的分解。製品指向・工程指向の両方を認めるため、WBSを「製品の分解だけ」とはしない |
+| ガント | [3] Microsoft Support https://support.microsoft.com/en-gb/project/work-with-the-gantt-chart-view | 公式本文、Use the task list／Use the chart／Why aren't my Gantt bars moving? の該当節 | 開始・終了日と期間、依存線。進捗だけでバーは動かない。状態変化で必ず動くという比較は避けた |
+| カンバン | [4] The Kanban Guide, May 2025 https://kanbanguides.org/the-kanban-guide/ | 公式ガイド本文、Definition of Kanban／Defining and Visualizing the Workflowの該当節。全文未読 | 状態と遷移方針、WIPの管理。列形式はガイドの必須要件ではないため、表ではstate-columnの慣行に限定した |
+| FFX Sphere Grid | [5] Square Enix公式マニュアル https://cdn.sqexeu.com/sea/ffxii/manuals/FFX-FFX2_PS3_ManInt_English_013014.pdf | 一次マニュアル、印刷頁16–19のSphere Grid本文。draft 0.2でも同範囲の本文とPDF画像（0始まりのPDF頁8・9）を再確認。全24 PDF頁は未読 | 現在位置、Sphere Levelに応じた移動範囲、現在位置と接続する隣接ノードの活性化、分岐を確認。「常に1マスずつ進む」とする規則は確認できず、採用しない。隣接ノードはそこへ移動せず活性化できる。Key Sphereによるロック解除の説明はこの範囲では確認できなかった |
+| 同上・ロック補足 | [6] Split_Infinity, GameFAQs https://gamefaqs.gamespot.com/ps2/197344-final-fantasy-x/faqs/18197 | draft 0.1の記録では、二次資料本文のSphere Grid Q5/Q6とKey Sphere一覧を閲読。長い攻略全体は未読。draft 0.2の直接取得は失敗し、当該URLに限定した検索もrobots.txtによる遮断となったため本文を再閲読できていない | ロックと対応するKey Sphereの説明はdraft 0.1の記録を引き継ぐ。新たな移動規則の根拠には使わず、「1マスずつ」はこの出典でも今回確認できていない。二次資料である旨を維持 |
+| ナレッジグラフ | [7] Hogan et al., Knowledge Graphs https://arxiv.org/html/2003.02320v6 | 研究論文の一次本文、IntroductionとKnowledge graph定義。全文未読 | 実体と関係のデータグラフ。定義は画面座標や進行尺度を定めない。「全てのKG表示に座標の意味がない」とは主張しない |
+| マインドマップ | [8] Ayoa公式ヘルプ https://support.ayoa.com/key-elements-of-mind-maps-in-ayoa | 公式記事本文を全文閲読 | 中心の主題、親枝、子枝、詳細化と連想、ユーザーによる枝の移動。効果に関する宣伝的主張は採用しない |
+| Technology Radar | [9] Thoughtworks公式FAQ https://www.thoughtworks.com/radar/faq | 公式本文、structure／blip／quadrants／ringsの該当節。全文未読 | 環は利用推奨、blipは技術・技法、推奨の変化で位置が変わる。閲覧時の環名はAdopt／Trial／Assess／Caution |
+| サンバースト | [10] Stasko & Zhang, InfoVis 2000 https://web.engr.oregonstate.edu/~zhange/images/infovis00.pdf | 原著の一次本文、Introduction／Backgroundと階層レベル・表示パラメータを述べるImplementation／Future workの該当箇所。全9頁未読 | ファイル階層、階層レベルの半径、focus/contextの位置変化。独自のユーザー評価結果を本製品の根拠に転用しない |
+| 同心円ロードマップ | [11] Neuron https://www.neuronux.com/post/how-to-create-a-product-roadmap | 作成者による実務説明の本文、§5のNow/Next/Laterと§6の優先順位更新。全文未読 | 三同心円をnow／next／laterに割り当てる。工程ゲートの記載は該当例に確認しない。一般の全ロードマップへの否定ではない |
+| リング型デプロイ | [12] Microsoft Learn https://learn.microsoft.com/en-us/devops/operate/safe-deployment-practices | 公式本文、冒頭／Safe deployment through tiers／Feature flags／品質信号の該当節。全文未読 | 小さい利用者集団から広い集団へ公開対象を拡大。文書はtiersと呼ぶ。全方式がring 0という番号を使うとはしない |
+| 同上・リングと承認ゲート | [13] Microsoft MSDN Magazine https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services | 公式技術記事の一次本文、deployment rings／approval gates／greenlightingの該当節。全文未読 | リングによる段階的公開、手動・自動承認ゲート。文字どおり同心円を描く必須仕様は確認しない |
+| スパイラルモデル | [14] Boehm 1988 https://www.cs.hmc.edu/~markk/SWE_copies/boehmspiral.pdf | 原著の大学配布コピー、一次本文の冒頭、Figure 2、The spiral model／A typical cycle／reviewの該当箇所。全12頁未読 | 半径＝累積費用、角度＝周回内の進み、リスク評価と次段階への見直し。「環＝工程順」とはしない |
+| Stage-Gate原著 | [15] Cooper 1990の書誌 https://cir.nii.ac.jp/crid/1363670318303014400?lang=en | 書誌のみ。検索で題、巻号、頁、年、DOIを照合。原著全文未読、出版社ページ取得は失敗 | 原著の存在と書誌用。1990年本文に現在の説明の全内容があるとは主張しない |
+| Stage-Gateの仕組み | [16] Cooper名義の公式説明 https://www.stage-gate.com/blog/the-stage-gate-model-an-overview/ | 著者に帰属する現在の一次説明、Industry Standard／Stages／Gatesの該当節。記事全文未読。1990年原著の代読ではない | 段階間、次段階の前に置く判定、継続・資源配分。発想として近い点を認め、図の座標契約と区別 |
+
+調査対象は **13系統、本文採用の外部出典16件**。[0]の添付実装は外部出典件数に含めない。検索結果・探索用に開いた追加ページは件数に加えず、本文の根拠にしない。したがって「検索で返された総件数」ではなく「比較に採用した限定コーパス」の件数である。
+
+使用した検索軸は、双六の順行、WBSの階層分解、ガントの時間軸、カンバンの状態、Sphere Gridの移動とロック、knowledge graphの定義、mind mapの中心と親子枝、Radarの環、Sunburstの階層、radial/concentric roadmap、Now/Next/Later、deployment rings/progressive exposure/approval gates、Boehm spiral model、Cooper Stage-Gate。特許検索や全可視化製品の調査は行っていない。
+
+## (b) 本文の主張と根拠
+
+以下の実装ファイル名・行番号は、draft 0.1／draft 0.2 で照合した v0.5.0 アーカイブ内の相対名・行番号である。参照実装 [0] は v0.5.1 に更新したが、本表を v0.5.1 の実物を再照合した記録としては扱わない。手元のパスや実在案件の識別子は記載しない。引用番号は原稿と一致する。
+
+| 主張・記載 | 主張の種類 | 根拠と限定 |
+|---|---|---|
+| 一つのプロジェクトのmap.jsonを読む閲覧専用の地図 | 実装事実 | `README.md`; `spec/starter-map.md`; `app/main.js`のロード、凍結、描画と操作処理 |
+| 盤は閲覧専用とし、作業ごとの台帳更新案をAIの担い手が準備する | 同梱文書に基づく運用上の設計前提 | `docs/ai-workflow.md` L3–7; `prompts/plan-to-map.md` L3–39; `prompts/update-map.md` L3–19; `templates/project/.sphere/WORKFLOW.md` L1–4・L38–48。検証と人のレビューを経て反映する想定であり、自動起動・自律承認・AI利用の必須化を主張しない。人による台帳の維持を排除しない |
+| 工程はgroup、phaseは別階層 | 実装事実 | `spec/starter-map.md`; `docs/auto-layout.md` §3; `app/layout.js`のancestor／phase.groups |
+| 一つのphaseは全円、複数は等分扇形 | 実装事実 | `app/layout.js`のphases生成; `tests/layout.test.cjs` phase order／equal sectors |
+| 中心から外へ工程順、plannedは外側 | 実装事実 | `docs/auto-layout.md` §2–3; `app/layout.js`の安定分割、BASE/BAND; 対応テスト |
+| 最初は中心まで背景を塗り、以後は環状帯 | 実装事実 | `app/layout.js`のregions生成とregionPath; first group diskテスト |
+| gateは所属工程の外縁 | 実装事実・通常ケース | `docs/auto-layout.md` §4; `app/layout.js`のgates配置。親に付く特殊な派生gateは別扱いになり得る（下記食い違い参照） |
+| ゲートを勝手に生成しない | 実装事実 | `app/layout.js`は存在するgateだけを抽出; `app/main.js`の入力nodes描画 |
+| 半径の主意味は工程順、細かな珠の半径は配置上の都合 | 実装事実＋意味づけ | `docs/auto-layout.md` §3–6; `app/layout.js` rootsのrows/colsと半径計算。時間・費用・完了度は入力にしていない |
+| 作業は帯内、構造ノードはアンカー | 実装事実・通常ケース | `docs/auto-layout.md` §3–5; `app/layout.js` STRUCTURAL／allocate; `app/main.js` structural描画 |
+| 派生は親に近い外向き枝、小課題は衛星 | 実装事実・親がworkである場合 | `docs/auto-layout.md` §5; `app/layout.js` attached／offsets／outward条件; derived branchesテスト |
+| 工程祖先のない行は外余白 | 実装事実 | `docs/auto-layout.md` §5; `app/layout.js` groupOf=null／margin; phase/project satellitesテスト |
+| 未通過の最内ゲートまでが現在の到達範囲 | 本文で定義した読み方 | 工程・外縁の配置を基礎にした解釈。`app/main.js`にfrontier計算はない。逐次ゲート計画に限定し、自動制御とはしない |
+| 到達範囲の中で前提を満たし、妨げを解消すると、新たに着手できる珠が生まれ得る | 本文で補足した読み方＋台帳更新条件 | `prompts/plan-to-map.md` L27–29; `templates/project/.sphere/WORKFLOW.md` L45–48; `app/core.js`のready検証; `app/main.js`のready表示。残る条件を満たし、台帳へ明示的にready=trueを記録することを条件とする。盤による算出、一条件の解消だけでのReady確定、Ready総数の単調増加は主張しない |
+| passed_with_defectsは通過、cancelled等は通過ではない | 実装事実 | `spec/starter-map.md`ゲート結果; `app/core.js` terminal。unknownは異常・要確認 |
+| Readyは台帳の明示値だけを表示 | 実装事実 | `docs/auto-layout.md` §10; `app/main.js` ready===true; `app/core.js`検証は再導出でない |
+| 前提やblocksとの整合を検証 | 実装事実＋例外 | `app/core.js` validateMap。直接管理mapとsource付き投影で扱いが異なるため、本文は直接管理mapに限定 |
+| currentsとpending gateに現在地印 | 実装事実 | `app/main.js` isCurrent、current-mark; `app/camera.js` current; `spec/starter-map.md` |
+| Sphere Gridとの差を、複数Ready・複数現在地と工程外縁ゲートで具体化 | 出典由来の記述と実装に基づく比較 | [5]印刷頁16–19の移動範囲・現在位置・接続する隣接ノードの活性化と、[0]の複数currents、ready表示、§3の逐次ゲート計画の読み方を対比。「Sphere Grid全体で現在位置が一つだけ」「常に一つの珠しか扱えない」とは主張しない。[6]は新規の移動規則の根拠に追加しない |
+| 担い手の駒を描かず、所有者表示と現在地を区別 | 実装事実 | `docs/auto-layout.md` §6; `app/main.js` ownerName、lane-mark、不可視actor-seat |
+| 外側は隠さず、未判定を理由に暗くしない | 実装事実 | `app/main.js` region-layerはindex/テーマ/plannedを参照しgate stateを参照しない; `app/styles.css`にゲート進行連動の領域処理なし |
+| 状態・ready・currents・owner・label・sourceで座標が変わらない | 実装事実 | `app/layout.js`; `docs/auto-layout.md` §1; `tests/layout.test.cjs` state invariance／source removal／owner and label |
+| 15通常状態形＋6ゲート結果形を区別 | 実装事実 | `docs/state-shapes.md`; `app/states.js`; `tests/states.test.cjs`の21形の相違チェック。異なるstate語が21語あるという意味ではない |
+| 同じ入力と同じ実装で同じgeometry | 実装事実 | `app/layout.js` comparator／round／pure layout; deterministicテスト。画素・カメラの同一性は非主張 |
+| 既存工程への行追加で他工程の珠座標は不変 | 実装事実＋条件 | `docs/auto-layout.md` §6–7; `app/layout.js`固定帯とallocate; locality／mixed order tests。構造変更を除外 |
+| 密な工程内で縮小、同工程は再配置され得る | 実装事実 | `app/layout.js` density=.78**attempt; `docs/auto-layout.md` §6 |
+| 他工程のラベル可視性不変は保証しない | 実装の限定 | `docs/auto-layout.md` §6; `app/layout.js` labelVisibilityは全geometryを扱う |
+| plannedとscheduledは配置上同一ではない | 実装事実 | `docs/auto-layout.md` §3; `app/layout.js` planned判定 |
+| 存在する関係のみ、選択とズームで表示を調整 | 実装事実 | `docs/auto-layout.md` §8/10; `app/main.js` edgeVisibility／関係描画 |
+| 全ノードの有限x/yを要するmanualはautoの例外 | 実装事実 | `app/layout.js` manual条件; manual/default/partial tests |
+| 配置・状態テスト57件通過 | draft 0.1作成時の検証記録（v0.5.0） | 旧版の記録では v0.5.0 の既存の `tests/layout.test.cjs` と `tests/states.test.cjs` を実行、57 pass / 0 fail。draft 0.2 と version 1.0 ではテストもブラウザ検証も再実行していない。英語本文・日本語訳の§4にも実行対象を v0.5.0 と明記。新しい実装コードやテストは作成していない |
+| 各先行例の正の特徴 | 出典由来 | (a)の該当出典。表の「なし」は当該説明で未規定という意味。カンバンの列は表示慣行として限定 |
+| 優劣ではなく、何を見たいか・何を表したいかという問いと表示対象の違いを比較 | 本文で明示した比較方針 | 2026-10-08 のユーザーレビュー (2) に基づき、英語本文・日本語訳の§5冒頭および共通の日本語要約へ反映。新しい実証結果や先行例の機能を追加するものではない |
+| リング型デプロイとの対象の違い | 出典と実装からの比較 | [12,13]は利用者集団への公開範囲、[0]は工程順。ゲートの比喩は近い。literal concentric図・ring 0の普遍性は非主張 |
+| Stage-Gateと工程間ゲートの考えを共有 | 比較 | [16]の段階とゲート説明。[15]は歴史的位置づけ・書誌だけに使用 |
+| ゲームの意匠・用語を借りない | 作者の設計方針としての記載 | 原稿と図の作成方針。公式ゲーム図は転載せず、状態印は添付実装の単純記号を模式化。コードから歴史的独立創作を証明するという主張ではない |
+| 限定コーパスで組合せを特定できなかった | draft 0.1／draft 0.2 の調査観察 | 13系統16出典の読み取った範囲。全文未読を含むため、存在しないという断定・新規性証明ではない |
+| 利用者評価なし、有効性を主張しない | 評価範囲の記録 | draft 0.1 から version 1.0 まで利用者実験なし。付属技術テストを利用者評価とみなさない |
+| MIT、権利者、参照実装 v0.5.1 | v0.5.0 の配布物記録＋ユーザーによる版の指定 | 旧版では v0.5.0 の `LICENSE`、`README.md`、`package.json` を照合。version 1.0 の実装参照とアーカイブ名、v0.5.1 の変更内容は2026-10-08のユーザー指定による。v0.5.1 の実物は未照合。文章・図は指定どおりCC BY 4.0、実装はMIT |
+| 表題部の日付は参照実装と本稿の初回公開日 | 公開時の記入規則 | §6冒頭をユーザーレビュー (3) の趣旨へ置換。2026-10-08はレビュー確定日であり、公開日ではない。公開日とリポジトリ名の仮値・差替え箇所は(g) |
+| 後続モデルについて一文だけ | 依頼条件 | 本文§7のみ。仕組み・形・固有名なし |
+
+## (c) 実装との食い違い・注意して限定した点
+
+以下は、v0.5.0 の照合に基づき draft 0.2 までに記録した注意点である。依頼の中心構造と通常の自動配置は整合するが、無条件の機能主張にはしない。原稿の限定は version 1.0 でも維持した。実装コードは変更しておらず、この表は v0.5.1 の実物の再照合結果ではない。
+
+| 読み違え得る表現 | v0.5.0で確認した実装 | 原稿での扱い |
+|---|---|---|
+| ゲートを越えると領域が表示上開く | 未通過ゲートに連動する領域の非表示・減光はない | 「開く」は計画上の読解であると明記 |
+| 到達範囲を自動で算出する | rendererには最内未通過ゲートや到達集合の計算がない | 逐次ゲート計画の読み方として定義 |
+| 外側の作業は自動で着手禁止 | Readyは明示値。半径によるReady算出・操作禁止はない | 範囲と個々のReadyを分離 |
+| 前提・妨げが一つ解消するたび、盤がReadyを増やす | 前提・妨げ・承認要否等を確認し、readyReasonと明示的なReady更新が必要。解消したblocksはactive=falseとして残す。閉じた作業や利用不能な作業はready=trueにできない | §3の補足は残る条件が満たされた場合の読み方。依存関係の削除、自動計算、単調な総数増加を意味しない |
+| 盤にAI自動更新機能がある／人は台帳を保てない | AIへのプロンプトと更新手順はあるが、それ自体は自動起動しない。上位sourceがある投影では元の台帳を更新する | §4は盤の外の運用上の設計前提として記載し、検証・人のレビュー・人による維持を明示 |
+| 現在地印は担当者の現在位置だけ | currentsのほか全pending gateにも印が付く | 担当者位置とゲートの判定待ちを区別。ownerとcurrentsに個別の駒対応を仮定しない |
+| 常にプロジェクト全体を同心の全円で描く | 複数phaseは扇形分割。manualは供給座標 | 自動配置・phase内の工程順として記載 |
+| 各工程に必ず一つのリリースゲート | gateがない工程、複数explicit、recheck/eventも可能。存在しないgateは補わない | 図は典型の三工程一ゲートを模式化。実装全域の必須条件としない |
+| gate種別を問わず全て必ず外縁 | `allocate`で非構造親に付くderived/issue/decisionはattached扱い。gateにderived=trueを与える特殊な入力はgate通常配置から外れ得る | 通常の所属stageのgateを説明。特殊入力の全てまで普遍保証しない |
+| 派生行の全てが親のそば | 非構造親を持つattached派生が短い枝。構造親や工程祖先なしの行は本線・余白配置になり得る | 親work beadに付く派生に限定 |
+| 行を増やしても全珠が固定 | 同一工程内は再配置・縮小され得る。構造変更も対象外 | 他工程のx/yの局所性のみ主張 |
+| 状態が変われば予定帯も移動する | 配置はplannedフラグを使用、scheduled状態ではない | 状態のみの不変とplanned構造変更を区別 |
+| 同じ台帳なら画面も同じ | geometryは決定的。カメラ、テーマ、ラベル可視性、ブラウザ表示は別 | 座標系の保証に限定 |
+| `docs/state-shapes.md`がv0.5専用の文書 | 見出しはv0.4.0。`docs/auto-layout.md`末尾にも状態形未確定との過去記述が残る。v0.5コードとstatesテストでは21形を確認できる | 現コードを優先。文書の残存記述を今回編集していない |
+
+Figure 1は架空エッセイ例から工程名と構造を採った模式図。行の完全な転載、実座標、全ての承認・証跡・Ready・currentsの再現ではない。図の現在地・Readyは記号の説明用に置き、キャプションで簡略化を明記する。予定工程のpending gateにも現在地印を付け、実装の印の規則を反映した。
+
+## (d) 題の案（履歴。version 1.0 は案1を採用）
+
+1. **Sphere Board: A Read-Only Project Map of Stage Bands and Boundary Gates** — 本文採用。対象・帯・境界ゲートを直接示す。
+2. **Sphere Board: Mapping Project Reach Through Stages and Gates** — 到達範囲という読解を中心にする案。
+3. **Sphere Board: Stable Task Positions in a Radial Stage-and-Gate Map** — 状態と位置を分ける実装上の性質を中心にする案。
+
+## (e) draft 0.2 の再照合と変更記録
+
+改訂日：2026-10-07。対応対象はユーザーレビュー (1)〜(3)。新たな比較系統や外部出典は追加していない。
+
+**(1) §5：Sphere Grid との違い。** 一般的なナビゲーションのたとえだけで終えていた文を、一文の具体的な比較に置き換えた。Sphere Grid側は[5]で再確認した移動可能範囲と、現在位置・接続する隣接ノードの活性化に限定し、Sphere Board側の複数Ready・複数現在地・工程外縁ゲートと対比した。
+
+[5]の印刷頁16–17（PDFの0始まり頁8）は、Sphere Levelに応じた移動範囲、および現在位置と接続する隣接ノードの活性化を説明している。同18–19（PDF頁9）の例と分岐の説明も再確認した。「現在位置から隣のノードへ常に1マスずつ進む」という移動規則は、その説明だけでは確定できないため不採用とした。隣接ノードの活性化にそこへの移動は不要だが、これは移動そのものの単位を確定する説明でもない。[6]は今回本文を再取得できず、draft 0.1のQ5/Q6・Key Sphere一覧の閲読記録を保持するにとどめた。単一の現在地や一律の一珠ずつの処理をゲーム全体へ帰属させない。
+
+**(2) §4：AIによる台帳更新の運用前提。** 閲覧専用の盤とは別に、AIの担い手が作業ごとの台帳更新案を準備する設計前提を一文で追加した。`docs/ai-workflow.md`（全7行）、`prompts/update-map.md`（全19行）、`prompts/plan-to-map.md`の依頼・構造・自己確認（L1–39）、`templates/project/.sphere/WORKFLOW.md`（全文）を確認した。計画からの初期作成と作業結果に応じた更新を区別し、検証と人のレビューを経て反映する想定を記す。人による台帳の維持を排除せず、AIが自動起動する、無断で承認する、作業のたびに更新が必ず成功する、という実装機能の主張にはしない。`source`付きmapは投影なので、更新先は元の台帳である。`prompts/create-theme.md`も確認したが、テーマ作成用でmapを変更しないため、この主張の根拠にはしていない。
+
+**(3) §3：内側の依存関係を解きほぐす読み方。** 到達範囲の中で前提（dependency）を満たし、妨げ（blocks）を一つずつ解消し、残る条件も満たして台帳にready=trueを記録することで、新たに着手できる珠が生まれ得る、と一文を追加した。これは既存の「Readyは台帳の値を表示するだけ」に従う読解であり、盤による再計算ではない。`WORKFLOW.md` L45–48では、前提・阻害・承認要否の確認とreadyReasonを要求し、解消したblocksをactive=falseとして記録する。前提の充足と妨げの解消を区別し、関係をすべて削除する意味にはしない。既存のReadyが完了等により外れることもあるため、Readyの総数が毎回増えるとは書かない。
+
+**付随する編集。** 本文と本記録の版をdraft 0.2へ更新し、日本語要約にも3点を反映した。[0]にAIワークフロー・計画作成／更新プロンプト・WORKFLOWの所在を追加した。引き継ぎで削除が決まっていた冒頭のAlternative titlesを除き、題の案は(d)に残した。Figure 1は変更していない。
+
+**今回の確認範囲。** 添付zipから上記文書と関連する`README.md`、`docs/map-json-guide.md`、`spec/starter-map.md`、`app/main.js`、`app/core.js`の該当箇所を読んだ。実装コード・台帳の更新、テストやブラウザ検証の再実行、公開・リポジトリへの送信はしていない。本文の57件通過はdraft 0.1作成時の記録であり、本改訂で得た新しい実行結果ではない。
+
+**draft 0.2 時点の公開前の残件（履歴）。** この改訂が照合した配布物は v0.5.0 のため、当時は本文・[0]の実装参照を v0.5.0 のままとした。公開前に Abstract・§1・§3・§4・§8・[0]・日本語要約の全出現箇所と配布物名を v0.5.1 に整合させる予定だった。当時の引き継ぎでは v0.5.1 は名称表記のみの変更とされていたが、実物は照合していない。公開日とリポジトリ名は仮のまま、§6冒頭の公開未了の一文は公開時の判断事項としていた。これらのうち実装参照・§6の文言は version 1.0 で処理済み。v0.5.1 の変更内容については、2026-10-08 のユーザー説明を(f)に記録し、現在残る仮箇所は(g)に集約する。
+
+## (f) version 1.0 の確定記録と draft 0.1 からの変更一覧
+
+ユーザーのレビュー判定：**下記の修正を入れて確定（2026-10-08）**。文書一式の版を **version 1.0（確定版）** とする。これは本文の確定日であり、初回公開日はまだ記入していない。公開の実行はこの作業に含まない。
+
+### v0.5.1 の版説明と検証の区別
+
+2026-10-08 のユーザー説明によれば、v0.5.1 は製品名の表記を直し、`docs/paper/` の置き場と文章の CC BY 4.0 の表示を追加した版であり、配置・状態・テストの中身は v0.5.0 と同じである。この説明に基づき、参照実装を v0.5.1、配布アーカイブ名を `sphere-board-v0.5.1.zip` に更新した。v0.5.1 のアーカイブ自体は今回提供されておらず、ファイル差分や同一性を独立に検証したわけではない。57件の通過は v0.5.0 での初稿作成時の記録として残し、v0.5.1 で実行したとは記さない。
+
+### 累積変更一覧
+
+| 段階 | 対象 | レビューに対する変更・扱い |
+|---|---|---|
+| draft 0.1（2026-10-07） | 初稿一式 | 英語本文、日本語要約、独自の模式図、照合記録を作成。参照実装は v0.5.0 公開候補。13系統・16外部出典の限定比較、利用者評価なし、57件の配置・状態テスト通過を記録。公開日とリポジトリ名は仮値 |
+| draft 0.1 → draft 0.2 | §5・Sphere Grid | 一般的なナビゲーションのたとえから、複数Ready・複数現在地・工程外縁ゲートによる一文の対比へ具体化。Sphere Grid側は[5]の移動範囲と現在位置・接続する隣接ノードの活性化に限定。「1マスずつ」は確認できず不採用。[6]を再取得できなかったことを照合記録に残した |
+| draft 0.1 → draft 0.2 | §4・AI運用 | AIの担い手が作業ごとの台帳更新案を準備し、検証と人のレビューを経て反映する設計前提を追加。人による維持を排除せず、盤の自動更新機能とはしない。根拠文書・プロンプトを[0]と照合記録へ追加 |
+| draft 0.1 → draft 0.2 | §3・到達範囲内の読み方 | 前提を満たし、妨げを一つずつ解消し、残る条件も満たして台帳に `ready=true` を記録することで、新たに着手できる珠が生まれ得ると補足。盤による計算やReady総数の単調増加とはしない |
+| draft 0.1 → draft 0.2 | 版・要約・題の案・check | 版を draft 0.2 にし、日本語要約に3点を反映。本文冒頭の Alternative titles を削除し、候補は本記録(d)に保存。再照合範囲と検証の限界を追記。図はこの段階ではバイト単位で変更なし |
+| draft 0.2 の日本語訳追加 | sphere-board-short-paper-ja.md | 要旨・§1〜§8・比較表・図の説明・参考文献[0–16]を含む全文訳を追加。原図を共用し、付属の日本語要約も収録。英語本文の内容改訂ではなく、draft 0.2 として追加 |
+| draft 0.2 → version 1.0 | 版表記 | 英語本文・日本語訳・図のフッター・本記録を version 1.0 に更新。日本語訳の原稿参照も version 1.0 に整合。ユーザーレビュー確定日を本記録に明記 |
+| draft 0.2 → version 1.0 | 参照実装・配布名 | 英語本文と日本語訳の要旨・§1・§3・§4・§8・[0]・末尾の日本語要約を v0.5.1 に更新。配布名を `sphere-board-v0.5.1.zip` に統一し、§8に `docs/paper/` の所在を記載。旧版の公開候補という位置づけは現在の参照から除いた |
+| draft 0.2 → version 1.0 | §4・テストの来歴 | 57件通過の記述に、初稿作成時に v0.5.0 で実行したことを明記。今回の再実行や v0.5.1 での実行は主張しない |
+| draft 0.2 → version 1.0 | §5冒頭・日本語要約 | 表現はそれぞれ別の問い（何を見たいか・何を表したいか）に答えるものであり、比較は優劣ではなく、何を見せるかの違いを記録するという一文を日英に追加。共通の日本語要約にも反映 |
+| draft 0.2 → version 1.0 | §6冒頭・§1・§8 | §6を「上記の日付は本稿が参照実装とともに初めて公開された日」の趣旨へ変更。整合のため、§1・§8に残る公開候補／下書き／公開未了の現在形の説明も整理。公開日を確定日で埋めず、リポジトリ名も仮のまま保持 |
+| draft 0.2 → version 1.0 | figure-1.svg | フッターの `draft 0.1` を `version 1.0` に更新。この一箇所以外の図形・配置・意味・説明文・StateToolsLab・CC BY 4.0 の表示は変更なし |
+| draft 0.2 → version 1.0 | check・納品一式 | 旧版の根拠・閲読の限界を保持し、現行版の説明と履歴を区別。累積変更一覧、公開時の仮箇所一覧、文書・SVG・ZIPの仕上げ確認を追加。ZIPは指定の4ファイルだけを収録 |
+
+### 維持した条件
+
+製品名は Sphere Board（スフィアボード）、著者・権利者は StateToolsLab。文章と図は CC BY 4.0、参照実装は MIT。新規性・最初の使用・優越性・有効性は断定せず、13系統・16出典の範囲を越えて一般化しない。「進むにつれて開ける」は読み方に限定し、非表示・減光・許可制御・Readyの自動算出を主張しない。後続のモデルについては、英語本文・日本語訳それぞれの§7の一文だけを維持し、仕組み・形・名称を加えていない。外部出典[1–16]の追加・削除はない。
+
+## (g) 公開日に差し替える仮の箇所
+
+| 未確定項目 | 現在の仮値 | 残っている箇所 |
+|---|---|---|
+| 本稿と参照実装の初回公開日 | `2026-10-17` | `sphere-board-short-paper.md` 冒頭の Date、`sphere-board-short-paper-ja.md` 冒頭の日付、`check.md` 冒頭の公開日、および本一覧の仮値欄 |
+| リポジトリ名 | `StateToolsLab/sphere-board` | 英語本文§8・参考文献[0]、日本語訳§8・参考文献[0]、および本一覧の仮値欄。本文・訳のURLはこの仮リポジトリ名を含む |
+
+公開時には実値とともに、「publication date to be supplied／公開日に記入」「placeholder／仮」「intended／予定」といった添え書きも公開状況に合わせて整える。本一覧自体も差替え完了の記録へ更新する。図には公開日やリポジトリの仮値はない。
+
+**2026-10-07（旧版の調査・照合日）と2026-10-08（レビュー確定日）は仮値ではなく、公開日に置き換えない。** §6は、冒頭に記入する日付が参照実装との初回公開日であることを定義する。今回の納品時点で公開した、または公開日を確定したという記録ではない。仮値を差し替えるとファイルのSHA-256は変わるため、公開用一式のハッシュを再計算する。
+
+## 仕上げ確認（version 1.0）
+
+- 土台は draft 0.2 の英語本文・日本語訳・照合記録と、draft 0.1から共用している原図。本文の実質的な追加はレビュー指示とその日英・要約の整合に限定した。
+- 英語本文は Abstract〜Availability（節見出し・表・キャプションを含む、Referencesと日本語要約を除く）で **2,611語**。英数字の連続を一語とし、語中のハイフン・アポストロフィを連結する簡易集計。末尾の日本語要約は空白を除いて **1,113字**で、英語版と日本語版に収録した要約は完全一致する。
+- Markdownの実ページ数は組版に依存する。本一式はページ数確認済みのPDFではなく、従来の2〜4頁相当という目標についてページ数の保証はしない。
+- 日英とも本文の参照実装は v0.5.1、配布名は指定名に整合。本文中の v0.5.0 は§4のテスト実行対象に関する一箇所ずつだけ。旧版の名称やdraft表記は履歴・初稿作成の説明・架空エッセイの工程名と区別した。
+- 外部参考文献は[1–16]を継承し、実装の[0]と合わせて17件。日英の引用番号・外部URLの対応、図の相対リンク、表の列数、節構成を確認した。
+- Figure 1は独自の模式図。旧版とのXML・テキスト差分はフッターの版表記一箇所だけで、幾何配置は同一。XMLを解析し、PNGへ描画して文字・配置を確認した。図の再設計や実装画面の再現は行っていない。
+- 本ZIPの直下は `sphere-board-short-paper.md`、`sphere-board-short-paper-ja.md`、`figure-1.svg`、`check.md` の4ファイルのみ。プレビュー、実装zip、実行コード、ハッシュ一覧の別ファイルはZIPに含めない。
+- 各ファイルはUTF-8・LF・末尾改行で保存。ZIPの整合性と格納内容のバイト一致を確認し、4ファイルのSHA-256を算出した。check.md自身のハッシュをcheck.mdに埋め込むと循環するため、ハッシュは納品回答と別添の一覧で示す。
+- 今回は文書一式の確定・検査・梱包のみ。外部出典の再調査、v0.5.1の実物照合、実装テストの再実行、ブラウザ検証、公開・外部送信は行っていない。

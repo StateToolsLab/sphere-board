@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">Sphere Board: three stage bands and boundary gates</title>
+  <desc id="desc">A schematic adaptation of a fictional essay project. Concept is the inner disk, first draft is the middle band, and planned publication is the outer dashed band. Each stage has a diamond gate on its outer boundary. The concept gate is passed. The other two are pending and carry segmented current marks. A first-draft work bead has four ready ticks. Another work bead has a segmented current mark. A derived bead branches outward. All stages remain visible.</desc>
+  <rect width="1100" height="720" fill="white"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#17232d">
+    <text x="35" y="38" font-size="23" font-weight="700">Sphere Board: stage order from the center outward</text>
+    <text x="35" y="63" font-size="14">Fictional essay example · schematic, not an exact screen rendering</text>
+    <g stroke="#526271" stroke-width="1.5">
+      <circle cx="310" cy="345" r="260" fill="#fafbfc" stroke-dasharray="6 5"/>
+      <circle cx="310" cy="345" r="180" fill="#fff"/>
+      <circle cx="310" cy="345" r="100" fill="#fafbfc"/>
+    </g>
+    <g font-size="15" font-weight="700">
+      <text x="256" y="395">1 Concept</text>
+      <text x="193" y="487">2 First draft</text>
+      <text x="192" y="565">3 Publication (planned)</text>
+    </g>
+    <g stroke="#17232d" fill="white" stroke-width="2">
+      <circle cx="310" cy="345" r="5" fill="#17232d"/>
+      <circle cx="265" cy="308" r="13"/>
+      <path d="M265 300v12m-5-5 5 5 5-5m-13 7h16" fill="none"/>
+      <circle cx="349" cy="305" r="13"/>
+      <path d="M349 297v12m-5-5 5 5 5-5m-13 7h16" fill="none"/>
+      <circle cx="310" cy="213" r="15"/>
+      <path d="M310 185v9 M310 232v9 M282 213h9 M329 213h9" fill="none"/>
+      <path d="M310 194v-20" fill="none"/>
+      <circle cx="310" cy="175" r="9"/>
+      <circle cx="190" cy="291" r="15"/>
+      <path d="M183 291h14m-5-5 6 5-6 5" fill="none"/>
+      <path d="M181 271a22 22 0 0 1 18 0 M210 282a22 22 0 0 1 0 18 M199 311a22 22 0 0 1-18 0 M170 300a22 22 0 0 1 0-18" fill="none"/>
+      <circle cx="310" cy="119" r="13"/>
+      <circle cx="127" cy="228" r="13"/>
+      <path d="M410 327l18 18-18 18-18-18z"/>
+      <path d="M401 345l6 6 13-15" fill="none"/>
+      <path d="M490 327l18 18-18 18-18-18z"/>
+      <path d="M484 336h12l-12 18h12z" fill="none"/>
+      <path d="M480 321a26 26 0 0 1 20 0 M514 335a26 26 0 0 1 0 20 M500 369a26 26 0 0 1-20 0 M466 355a26 26 0 0 1 0-20" fill="none"/>
+      <path d="M570 327l18 18-18 18-18-18z"/>
+      <path d="M564 336h12l-12 18h12z" fill="none"/>
+      <path d="M560 321a26 26 0 0 1 20 0 M594 335a26 26 0 0 1 0 20 M580 369a26 26 0 0 1-20 0 M546 355a26 26 0 0 1 0-20" fill="none"/>
+    </g>
+    <g font-size="12" text-anchor="middle">
+      <text x="410" y="394">Passed gate</text>
+      <text x="490" y="416">Pending gate</text>
+      <text x="582" y="394">Pending gate</text>
+    </g>
+    <g stroke="#526271" stroke-width="1" fill="none">
+      <path d="M334 213H644"/>
+      <path d="M319 175H644"/>
+      <path d="M171 292H89V450H644"/>
+      <path d="M494 370v92h150"/>
+      <path d="M473 136H644"/>
+    </g>
+    <g font-size="15">
+      <text x="665" y="131" font-weight="700">Planned outer stage</text>
+      <text x="665" y="153">Dashed boundary; still visible</text>
+      <text x="665" y="184" font-weight="700">Derived work</text>
+      <text x="665" y="206">Short outward branch from its parent</text>
+      <text x="665" y="244" font-weight="700">Ready work</text>
+      <text x="665" y="266">Four straight ticks = recorded ready</text>
+      <text x="665" y="296">Stage bands contain work beads;</text>
+      <text x="665" y="318">diamond gates sit on outer boundaries.</text>
+      <text x="665" y="351" font-weight="700">Radius encodes stage order</text>
+      <text x="665" y="373">It is not a time or completion scale.</text>
+      <text x="665" y="435" font-weight="700">Current work location</text>
+      <text x="665" y="457">Four arcs; pending gates use this mark too</text>
+      <text x="665" y="500" font-weight="700">Present gate-defined reach</text>
+      <text x="665" y="522">Through the second boundary in this example</text>
+      <text x="665" y="544">Outer range depends on crossing its gate.</text>
+    </g>
+    <text x="35" y="642" font-size="14">Reading convention: concept gate passed; first-draft gate not yet crossed.</text>
+    <text x="35" y="666" font-size="14">The schematic shows no hiding, dimming, automatic authorization, or moving actor token.</text>
+    <text x="35" y="696" font-size="12">StateToolsLab · version 1.0 · CC BY 4.0</text>
+  </g>
+</svg>

@@ -1,0 +1,1293 @@
+{
+  "profile": "sphere-starter/0.3",
+  "meta": {
+    "id": "fixture-60",
+    "title": "自動配置試験 60 ノード（架空）",
+    "description": "試験専用の架空データ。案件・担当・証跡はすべて合成。実際の進捗ではありません。",
+    "isDemo": true
+  },
+  "revision": 0,
+  "updatedAt": null,
+  "updatedBy": null,
+  "lastChange": "",
+  "actors": [
+    {
+      "id": "actor-a",
+      "label": "制作係A（架空）",
+      "kind": "unknown"
+    },
+    {
+      "id": "actor-b",
+      "label": "確認係B（架空）",
+      "kind": "unknown"
+    }
+  ],
+  "lanes": [
+    "制作係A（架空）",
+    "確認係B（架空）"
+  ],
+  "currents": [
+    "gate-0-0",
+    "gate-0-1",
+    "gate-0-2",
+    "gate-1-0",
+    "gate-1-1",
+    "gate-1-2",
+    "recheck",
+    "event"
+  ],
+  "problems": [],
+  "nodes": [
+    {
+      "id": "board",
+      "kind": "project",
+      "label": "試験盤 0（架空）",
+      "owner": null,
+      "state": "none",
+      "ready": false,
+      "order": 0,
+      "lane": ""
+    },
+    {
+      "id": "phase-0",
+      "kind": "phase",
+      "label": "フェーズ 1（架空）",
+      "owner": null,
+      "state": "none",
+      "ready": false,
+      "order": 1,
+      "lane": ""
+    },
+    {
+      "id": "group-0-0",
+      "kind": "group",
+      "label": "工程 2（架空）",
+      "owner": null,
+      "state": "not_started",
+      "ready": false,
+      "order": 2,
+      "lane": "",
+      "planned": false
+    },
+    {
+      "id": "manager-0-0",
+      "kind": "management",
+      "label": "集約 3（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 3,
+      "lane": ""
+    },
+    {
+      "id": "gate-0-0",
+      "kind": "gate",
+      "label": "判断 4（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 4,
+      "lane": "",
+      "gateKind": "explicit",
+      "planned": false
+    },
+    {
+      "id": "group-0-1",
+      "kind": "group",
+      "label": "工程 5（架空）",
+      "owner": null,
+      "state": "not_started",
+      "ready": false,
+      "order": 5,
+      "lane": "",
+      "planned": false
+    },
+    {
+      "id": "manager-0-1",
+      "kind": "management",
+      "label": "集約 6（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 6,
+      "lane": ""
+    },
+    {
+      "id": "gate-0-1",
+      "kind": "gate",
+      "label": "判断 7（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 7,
+      "lane": "",
+      "gateKind": "explicit",
+      "planned": false
+    },
+    {
+      "id": "group-0-2",
+      "kind": "group",
+      "label": "工程 8（架空）",
+      "owner": null,
+      "state": "not_started",
+      "ready": false,
+      "order": 8,
+      "lane": "",
+      "planned": true
+    },
+    {
+      "id": "manager-0-2",
+      "kind": "management",
+      "label": "集約 9（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 9,
+      "lane": ""
+    },
+    {
+      "id": "gate-0-2",
+      "kind": "gate",
+      "label": "判断 10（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 10,
+      "lane": "",
+      "gateKind": "explicit",
+      "planned": true
+    },
+    {
+      "id": "phase-1",
+      "kind": "phase",
+      "label": "フェーズ 11（架空）",
+      "owner": null,
+      "state": "none",
+      "ready": false,
+      "order": 11,
+      "lane": ""
+    },
+    {
+      "id": "group-1-0",
+      "kind": "group",
+      "label": "工程 12（架空）",
+      "owner": null,
+      "state": "not_started",
+      "ready": false,
+      "order": 12,
+      "lane": "",
+      "planned": false
+    },
+    {
+      "id": "manager-1-0",
+      "kind": "management",
+      "label": "集約 13（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 13,
+      "lane": ""
+    },
+    {
+      "id": "gate-1-0",
+      "kind": "gate",
+      "label": "判断 14（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 14,
+      "lane": "",
+      "gateKind": "explicit",
+      "planned": false
+    },
+    {
+      "id": "group-1-1",
+      "kind": "group",
+      "label": "工程 15（架空）",
+      "owner": null,
+      "state": "not_started",
+      "ready": false,
+      "order": 15,
+      "lane": "",
+      "planned": false
+    },
+    {
+      "id": "manager-1-1",
+      "kind": "management",
+      "label": "集約 16（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 16,
+      "lane": ""
+    },
+    {
+      "id": "gate-1-1",
+      "kind": "gate",
+      "label": "判断 17（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 17,
+      "lane": "",
+      "gateKind": "explicit",
+      "planned": false
+    },
+    {
+      "id": "group-1-2",
+      "kind": "group",
+      "label": "工程 18（架空）",
+      "owner": null,
+      "state": "not_started",
+      "ready": false,
+      "order": 18,
+      "lane": "",
+      "planned": true
+    },
+    {
+      "id": "manager-1-2",
+      "kind": "management",
+      "label": "集約 19（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 19,
+      "lane": ""
+    },
+    {
+      "id": "gate-1-2",
+      "kind": "gate",
+      "label": "判断 20（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 20,
+      "lane": "",
+      "gateKind": "explicit",
+      "planned": true
+    },
+    {
+      "id": "recheck",
+      "kind": "gate",
+      "label": "判断 21（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 21,
+      "lane": "",
+      "gateKind": "recheck"
+    },
+    {
+      "id": "event",
+      "kind": "gate",
+      "label": "判断 22（架空）",
+      "owner": "actor-a",
+      "state": "pending",
+      "ready": false,
+      "order": 22,
+      "lane": "",
+      "gateKind": "event"
+    },
+    {
+      "id": "phase-decision",
+      "kind": "decision",
+      "label": "未確定事項 23（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 23,
+      "lane": ""
+    },
+    {
+      "id": "row-0",
+      "kind": "task",
+      "label": "作業 24（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": true,
+      "order": 24,
+      "lane": "制作係A（架空）",
+      "readyReason": "架空fixture: 前提を持たない未着手行"
+    },
+    {
+      "id": "row-1",
+      "kind": "task",
+      "label": "作業 25（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 25,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-2",
+      "kind": "task",
+      "label": "作業 26（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 26,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-3",
+      "kind": "task",
+      "label": "作業 27（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 27,
+      "lane": "確認係B（架空）",
+      "derived": true
+    },
+    {
+      "id": "row-4",
+      "kind": "issue",
+      "label": "小課題 28（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 28,
+      "lane": ""
+    },
+    {
+      "id": "row-5",
+      "kind": "task",
+      "label": "作業 29（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": true,
+      "order": 29,
+      "lane": "確認係B（架空）",
+      "readyReason": "架空fixture: 前提を持たない未着手行"
+    },
+    {
+      "id": "row-6",
+      "kind": "task",
+      "label": "作業 30（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 30,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-7",
+      "kind": "task",
+      "label": "作業 31（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 31,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-8",
+      "kind": "task",
+      "label": "作業 32（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 32,
+      "lane": "制作係A（架空）",
+      "derived": true
+    },
+    {
+      "id": "row-9",
+      "kind": "issue",
+      "label": "小課題 33（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 33,
+      "lane": ""
+    },
+    {
+      "id": "row-10",
+      "kind": "task",
+      "label": "作業 34（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 34,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-11",
+      "kind": "task",
+      "label": "作業 35（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 35,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-12",
+      "kind": "task",
+      "label": "作業 36（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 36,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-13",
+      "kind": "task",
+      "label": "作業 37（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 37,
+      "lane": "確認係B（架空）",
+      "derived": true
+    },
+    {
+      "id": "row-14",
+      "kind": "issue",
+      "label": "小課題 38（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 38,
+      "lane": ""
+    },
+    {
+      "id": "row-15",
+      "kind": "task",
+      "label": "作業 39（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 39,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-16",
+      "kind": "task",
+      "label": "作業 40（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 40,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-17",
+      "kind": "task",
+      "label": "作業 41（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 41,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-18",
+      "kind": "task",
+      "label": "作業 42（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 42,
+      "lane": "制作係A（架空）",
+      "derived": true
+    },
+    {
+      "id": "row-19",
+      "kind": "issue",
+      "label": "小課題 43（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 43,
+      "lane": ""
+    },
+    {
+      "id": "row-20",
+      "kind": "task",
+      "label": "作業 44（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 44,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-21",
+      "kind": "task",
+      "label": "作業 45（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 45,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-22",
+      "kind": "task",
+      "label": "作業 46（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 46,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-23",
+      "kind": "task",
+      "label": "作業 47（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 47,
+      "lane": "確認係B（架空）",
+      "derived": true
+    },
+    {
+      "id": "row-24",
+      "kind": "issue",
+      "label": "小課題 48（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 48,
+      "lane": ""
+    },
+    {
+      "id": "row-25",
+      "kind": "task",
+      "label": "作業 49（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 49,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-26",
+      "kind": "task",
+      "label": "作業 50（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 50,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-27",
+      "kind": "task",
+      "label": "作業 51（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 51,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-28",
+      "kind": "task",
+      "label": "作業 52（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 52,
+      "lane": "制作係A（架空）",
+      "derived": true
+    },
+    {
+      "id": "row-29",
+      "kind": "issue",
+      "label": "小課題 53（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 53,
+      "lane": ""
+    },
+    {
+      "id": "row-30",
+      "kind": "task",
+      "label": "作業 54（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 54,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-31",
+      "kind": "task",
+      "label": "作業 55（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 55,
+      "lane": "確認係B（架空）"
+    },
+    {
+      "id": "row-32",
+      "kind": "task",
+      "label": "作業 56（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 56,
+      "lane": "制作係A（架空）"
+    },
+    {
+      "id": "row-33",
+      "kind": "task",
+      "label": "作業 57（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 57,
+      "lane": "確認係B（架空）",
+      "derived": true
+    },
+    {
+      "id": "row-34",
+      "kind": "issue",
+      "label": "小課題 58（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 58,
+      "lane": ""
+    },
+    {
+      "id": "row-35",
+      "kind": "task",
+      "label": "作業 59（架空）",
+      "owner": "actor-a",
+      "state": "not_started",
+      "ready": false,
+      "order": 59,
+      "lane": "確認係B（架空）"
+    }
+  ],
+  "edges": [
+    {
+      "id": "rel-0",
+      "kind": "parent",
+      "from": "board",
+      "to": "phase-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-1",
+      "kind": "parent",
+      "from": "phase-0",
+      "to": "group-0-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-2",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "manager-0-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-3",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "gate-0-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-4",
+      "kind": "parent",
+      "from": "phase-0",
+      "to": "group-0-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-5",
+      "kind": "parent",
+      "from": "group-0-1",
+      "to": "manager-0-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-6",
+      "kind": "parent",
+      "from": "group-0-1",
+      "to": "gate-0-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-7",
+      "kind": "parent",
+      "from": "phase-0",
+      "to": "group-0-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-8",
+      "kind": "parent",
+      "from": "group-0-2",
+      "to": "manager-0-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-9",
+      "kind": "parent",
+      "from": "group-0-2",
+      "to": "gate-0-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-10",
+      "kind": "parent",
+      "from": "board",
+      "to": "phase-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-11",
+      "kind": "parent",
+      "from": "phase-1",
+      "to": "group-1-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-12",
+      "kind": "parent",
+      "from": "group-1-0",
+      "to": "manager-1-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-13",
+      "kind": "parent",
+      "from": "group-1-0",
+      "to": "gate-1-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-14",
+      "kind": "parent",
+      "from": "phase-1",
+      "to": "group-1-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-15",
+      "kind": "parent",
+      "from": "group-1-1",
+      "to": "manager-1-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-16",
+      "kind": "parent",
+      "from": "group-1-1",
+      "to": "gate-1-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-17",
+      "kind": "parent",
+      "from": "phase-1",
+      "to": "group-1-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-18",
+      "kind": "parent",
+      "from": "group-1-2",
+      "to": "manager-1-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-19",
+      "kind": "parent",
+      "from": "group-1-2",
+      "to": "gate-1-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-20",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "recheck",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-21",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "event",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-22",
+      "kind": "parent",
+      "from": "phase-1",
+      "to": "phase-decision",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-23",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "row-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-24",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "row-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-25",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "row-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-26",
+      "kind": "parent",
+      "from": "row-2",
+      "to": "row-3",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-27",
+      "kind": "origin",
+      "from": "row-2",
+      "to": "row-3",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-28",
+      "kind": "return",
+      "from": "row-3",
+      "to": "row-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-29",
+      "kind": "parent",
+      "from": "row-3",
+      "to": "row-4",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-30",
+      "kind": "blocks",
+      "from": "row-4",
+      "to": "gate-0-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-31",
+      "kind": "parent",
+      "from": "group-0-1",
+      "to": "row-5",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-32",
+      "kind": "parent",
+      "from": "group-0-1",
+      "to": "row-6",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-33",
+      "kind": "parent",
+      "from": "group-0-1",
+      "to": "row-7",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-34",
+      "kind": "parent",
+      "from": "row-7",
+      "to": "row-8",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-35",
+      "kind": "origin",
+      "from": "row-7",
+      "to": "row-8",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-36",
+      "kind": "parent",
+      "from": "row-8",
+      "to": "row-9",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-37",
+      "kind": "blocks",
+      "from": "row-9",
+      "to": "gate-0-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-38",
+      "kind": "parent",
+      "from": "group-0-2",
+      "to": "row-10",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-39",
+      "kind": "parent",
+      "from": "group-0-2",
+      "to": "row-11",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-40",
+      "kind": "parent",
+      "from": "group-0-2",
+      "to": "row-12",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-41",
+      "kind": "parent",
+      "from": "row-12",
+      "to": "row-13",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-42",
+      "kind": "origin",
+      "from": "row-12",
+      "to": "row-13",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-43",
+      "kind": "return",
+      "from": "row-13",
+      "to": "row-12",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-44",
+      "kind": "parent",
+      "from": "row-13",
+      "to": "row-14",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-45",
+      "kind": "blocks",
+      "from": "row-14",
+      "to": "gate-0-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-46",
+      "kind": "parent",
+      "from": "group-1-0",
+      "to": "row-15",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-47",
+      "kind": "parent",
+      "from": "group-1-0",
+      "to": "row-16",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-48",
+      "kind": "parent",
+      "from": "group-1-0",
+      "to": "row-17",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-49",
+      "kind": "parent",
+      "from": "row-17",
+      "to": "row-18",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-50",
+      "kind": "origin",
+      "from": "row-17",
+      "to": "row-18",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-51",
+      "kind": "parent",
+      "from": "row-18",
+      "to": "row-19",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-52",
+      "kind": "blocks",
+      "from": "row-19",
+      "to": "gate-1-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-53",
+      "kind": "parent",
+      "from": "group-1-1",
+      "to": "row-20",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-54",
+      "kind": "parent",
+      "from": "group-1-1",
+      "to": "row-21",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-55",
+      "kind": "parent",
+      "from": "group-1-1",
+      "to": "row-22",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-56",
+      "kind": "parent",
+      "from": "row-22",
+      "to": "row-23",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-57",
+      "kind": "origin",
+      "from": "row-22",
+      "to": "row-23",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-58",
+      "kind": "return",
+      "from": "row-23",
+      "to": "row-22",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-59",
+      "kind": "parent",
+      "from": "row-23",
+      "to": "row-24",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-60",
+      "kind": "blocks",
+      "from": "row-24",
+      "to": "gate-1-1",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-61",
+      "kind": "parent",
+      "from": "group-1-2",
+      "to": "row-25",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-62",
+      "kind": "parent",
+      "from": "group-1-2",
+      "to": "row-26",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-63",
+      "kind": "parent",
+      "from": "group-1-2",
+      "to": "row-27",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-64",
+      "kind": "parent",
+      "from": "row-27",
+      "to": "row-28",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-65",
+      "kind": "origin",
+      "from": "row-27",
+      "to": "row-28",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-66",
+      "kind": "parent",
+      "from": "row-28",
+      "to": "row-29",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-67",
+      "kind": "blocks",
+      "from": "row-29",
+      "to": "gate-1-2",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-68",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "row-30",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-69",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "row-31",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-70",
+      "kind": "parent",
+      "from": "group-0-0",
+      "to": "row-32",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-71",
+      "kind": "parent",
+      "from": "row-32",
+      "to": "row-33",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-72",
+      "kind": "origin",
+      "from": "row-32",
+      "to": "row-33",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-73",
+      "kind": "return",
+      "from": "row-33",
+      "to": "row-32",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-74",
+      "kind": "parent",
+      "from": "row-33",
+      "to": "row-34",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-75",
+      "kind": "blocks",
+      "from": "row-34",
+      "to": "gate-0-0",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "rel-76",
+      "kind": "parent",
+      "from": "group-0-1",
+      "to": "row-35",
+      "active": true,
+      "certainty": "explicit"
+    }
+  ],
+  "regions": [],
+  "layout": {
+    "mode": "auto"
+  }
+}

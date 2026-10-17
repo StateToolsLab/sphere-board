@@ -1,0 +1,1111 @@
+{
+  "method": "Chromium generated index.html via set_content; explicit same-map fetch fixtures; no real browser URL/file transport.",
+  "browser": "/usr/bin/chromium",
+  "passed": 250,
+  "failed": 0,
+  "errors": [],
+  "networkRequests": [],
+  "screenshots": [
+    "preview/layout/essay-desktop-initial.png",
+    "preview/layout/essay-desktop-overview.png",
+    "preview/layout/essay-375-initial.png",
+    "preview/layout/essay-375-overview.png",
+    "preview/layout/essay-375-bottom-sheet.png",
+    "preview/layout/exhibition-desktop-initial.png",
+    "preview/layout/exhibition-desktop-overview.png",
+    "preview/layout/exhibition-375-initial.png",
+    "preview/layout/exhibition-375-overview.png",
+    "preview/layout/scale-10-desktop-initial.png",
+    "preview/layout/scale-10-desktop-overview.png",
+    "preview/layout/scale-10-375-initial.png",
+    "preview/layout/scale-10-375-overview.png",
+    "preview/layout/scale-60-desktop-initial.png",
+    "preview/layout/scale-60-desktop-overview.png",
+    "preview/layout/scale-60-375-initial.png",
+    "preview/layout/scale-60-375-overview.png",
+    "preview/layout/scale-150-desktop-initial.png",
+    "preview/layout/scale-150-desktop-overview.png",
+    "preview/layout/scale-150-375-initial.png",
+    "preview/layout/scale-150-375-overview.png",
+    "preview/layout/scale-300-desktop-initial.png",
+    "preview/layout/scale-300-desktop-overview.png",
+    "preview/layout/scale-300-375-initial.png",
+    "preview/layout/scale-300-375-overview.png"
+  ],
+  "metrics": [
+    {
+      "fixture": "essay",
+      "viewportWidth": 1440,
+      "bootMs": 550.9,
+      "initialScale": 1.5
+    },
+    {
+      "fixture": "essay",
+      "viewportWidth": 375,
+      "bootMs": 292.95,
+      "initialScale": 1.5
+    },
+    {
+      "fixture": "exhibition",
+      "viewportWidth": 1440,
+      "bootMs": 354.17,
+      "initialScale": 1.5
+    },
+    {
+      "fixture": "exhibition",
+      "viewportWidth": 375,
+      "bootMs": 376.34,
+      "initialScale": 1.5
+    },
+    {
+      "fixture": "scale-10",
+      "viewportWidth": 1440,
+      "bootMs": 282.84,
+      "initialScale": 1.386888590812043
+    },
+    {
+      "fixture": "scale-10",
+      "viewportWidth": 375,
+      "bootMs": 250.64,
+      "initialScale": 1.5
+    },
+    {
+      "fixture": "scale-60",
+      "viewportWidth": 1440,
+      "bootMs": 424.65,
+      "initialScale": 2.9094190129634727
+    },
+    {
+      "fixture": "scale-60",
+      "viewportWidth": 375,
+      "bootMs": 410.25,
+      "initialScale": 2.9094190129634727
+    },
+    {
+      "fixture": "scale-150",
+      "viewportWidth": 1440,
+      "bootMs": 518.49,
+      "initialScale": 2.9094190129634727
+    },
+    {
+      "fixture": "scale-150",
+      "viewportWidth": 375,
+      "bootMs": 496.97,
+      "initialScale": 2.9094190129634727
+    },
+    {
+      "fixture": "scale-300",
+      "viewportWidth": 1440,
+      "bootMs": 805.34,
+      "initialScale": 4.782082532813071
+    },
+    {
+      "fixture": "scale-300",
+      "viewportWidth": 375,
+      "bootMs": 669.74,
+      "initialScale": 4.782082532813071
+    }
+  ],
+  "checks": [
+    {
+      "name": "essay / 1440px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px pointer selects bead",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px details expose all textual relationships",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px closing detail does not change camera",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px list reads relation text",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px theme keeps geometry, seats and camera unchanged",
+      "passed": true
+    },
+    {
+      "name": "essay / 1440px drag pans camera only",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px pointer selects bead",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px details expose all textual relationships",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px mobile details are bottom sheet",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px closing detail does not change camera",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px list reads relation text",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px theme keeps geometry, seats and camera unchanged",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px drag pans camera only",
+      "passed": true
+    },
+    {
+      "name": "essay / 375px two touch points pinch zoom camera",
+      "passed": true
+    },
+    {
+      "name": "essay desktop and 375px share EXACT complete geometry",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 1440px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "exhibition / 375px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "exhibition desktop and 375px share EXACT complete geometry",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 1440px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-10 / 375px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-10 desktop and 375px share EXACT complete geometry",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 1440px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-60 / 375px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-60 desktop and 375px share EXACT complete geometry",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 1440px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-150 / 375px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-150 desktop and 375px share EXACT complete geometry",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 1440px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px validated input and exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px unfocused skip link is clipped",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px actor seats have no bead or visible-label collisions",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px initial focused current is on screen with readable label",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px initial nearby ready label is enabled at readable scale",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px initial camera records the same readable floor it enforces",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px count, cycle position and button visible",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px labels are clipped to reserved boxes",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px structural heading parent edges are hidden by default",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px non-structural parent edges remain drawn",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px selecting a structural parent edge endpoint reveals that edge",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px legend explains structural membership by region",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px overview retains current/ready screen-sized marks",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px overview retains all group regions",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px planned boundary is dashed",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px overview hides labels and reduces non-parent edges",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px current button moves to readable currents and wraps to the first focus",
+      "passed": true
+    },
+    {
+      "name": "scale-300 / 375px camera-only operations leave geometry exact",
+      "passed": true
+    },
+    {
+      "name": "scale-300 desktop and 375px share EXACT complete geometry",
+      "passed": true
+    },
+    {
+      "name": "No uncaught JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "No external network requests in screenshot fixture mode",
+      "passed": true
+    }
+  ]
+}

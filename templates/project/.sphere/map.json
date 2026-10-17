@@ -1,0 +1,25 @@
+{
+  "profile": "sphere-starter/0.3",
+  "meta": {
+    "title": "My project",
+    "description": "計画を入力してから使用してください。",
+    "isDemo": false
+  },
+  "revision": 0,
+  "updatedAt": null,
+  "updatedBy": null,
+  "actors": [
+    {
+      "id": "agent",
+      "label": "Project AI（役割ID）",
+      "kind": "ai"
+    }
+  ],
+  "currents": [],
+  "nodes": [],
+  "edges": [],
+  "regions": [],
+  "lastChange": "",
+  "lanes": [],
+  "problems": []
+}

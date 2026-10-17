@@ -1,0 +1,16 @@
+{
+  "themeSpec": "theme-spec/0.1",
+  "profile": "sphere-theme/0.1",
+  "id": "my-brand",
+  "name": "My Organization",
+  "version": "0.1.0",
+  "layer": "brand",
+  "tokens": {
+    "light": {
+      "accent": "#785821"
+    },
+    "dark": {
+      "accent": "#E9CA87"
+    }
+  }
+}

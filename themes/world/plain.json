@@ -1,0 +1,45 @@
+{
+  "themeSpec": "theme-spec/0.1",
+  "profile": "sphere-theme/0.1",
+  "id": "plain",
+  "name": "Core Plain",
+  "version": "0.1.0",
+  "layer": "world",
+  "description": "飾らない、構造のための標準。",
+  "tokens": {
+    "light": {
+      "canvas": "#F4F6F8",
+      "surface": "#FFFFFF",
+      "text": "#17232D",
+      "muted": "#53616E",
+      "border": "#71808F",
+      "accent": "#2452AF",
+      "ready": "#21634B",
+      "issue": "#A13944"
+    },
+    "dark": {
+      "canvas": "#10161D",
+      "surface": "#18212C",
+      "text": "#EAF0F5",
+      "muted": "#A2B0BE",
+      "border": "#7B8D9F",
+      "accent": "#96B8FF",
+      "ready": "#8DDCB3",
+      "issue": "#FFADB2"
+    },
+    "typography": {
+      "ui": "sans"
+    }
+  },
+  "slots": {
+    "node.shell": {
+      "shape": "circle"
+    },
+    "board.canvas": {
+      "pattern": "dots"
+    },
+    "node.ornament": {
+      "variant": "none"
+    }
+  }
+}

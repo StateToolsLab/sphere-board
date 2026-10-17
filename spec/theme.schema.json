@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sphere Theme starter profile 0.1 — data-only recipes",
+  "type": "object",
+  "properties": {
+    "themeSpec": {
+      "const": "theme-spec/0.1"
+    },
+    "profile": {
+      "const": "sphere-theme/0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,79}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "layer": {
+      "enum": [
+        "world",
+        "brand"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "tokens": {
+      "type": "object",
+      "properties": {
+        "light": {
+          "type": "object",
+          "properties": {
+            "canvas": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "surface": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "text": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "muted": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "border": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "accent": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "ready": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "issue": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "dark": {
+          "type": "object",
+          "properties": {
+            "canvas": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "surface": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "text": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "muted": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "border": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "accent": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "ready": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "issue": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "ui": {
+              "enum": [
+                "sans",
+                "serif",
+                "mono"
+              ]
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "slots": {
+      "type": "object",
+      "properties": {
+        "node.shell": {
+          "type": "object",
+          "properties": {
+            "shape": {
+              "enum": [
+                "circle",
+                "rounded",
+                "cut",
+                "plaque",
+                "shield",
+                "seal",
+                "soft",
+                "organic"
+              ]
+            }
+          },
+          "required": [
+            "shape"
+          ],
+          "additionalProperties": false
+        },
+        "board.canvas": {
+          "type": "object",
+          "properties": {
+            "pattern": {
+              "enum": [
+                "dots",
+                "grid",
+                "washi",
+                "parchment",
+                "lattice",
+                "hanji",
+                "botanical",
+                "none"
+              ]
+            }
+          },
+          "required": [
+            "pattern"
+          ],
+          "additionalProperties": false
+        },
+        "node.ornament": {
+          "type": "object",
+          "properties": {
+            "variant": {
+              "enum": [
+                "none",
+                "double-ring",
+                "corners",
+                "engraving",
+                "stitch"
+              ]
+            }
+          },
+          "required": [
+            "variant"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "themeSpec",
+    "profile",
+    "id",
+    "name",
+    "version",
+    "layer",
+    "tokens"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "layer": {
+            "const": "brand"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "tokens": {
+            "type": "object",
+            "properties": {
+              "light": {
+                "type": "object",
+                "properties": {
+                  "accent": {
+                    "type": "string",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "dark": {
+                "type": "object",
+                "properties": {
+                  "accent": {
+                    "type": "string",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "typography": {
+                "type": "object",
+                "properties": {
+                  "ui": {
+                    "enum": [
+                      "sans",
+                      "serif",
+                      "mono"
+                    ]
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "slots": {
+            "not": {}
+          }
+        }
+      }
+    }
+  ]
+}

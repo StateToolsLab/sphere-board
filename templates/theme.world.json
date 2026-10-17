@@ -1,0 +1,27 @@
+{
+  "themeSpec": "theme-spec/0.1",
+  "profile": "sphere-theme/0.1",
+  "id": "my-world",
+  "name": "My World",
+  "version": "0.1.0",
+  "layer": "world",
+  "tokens": {
+    "light": {
+      "accent": "#356349"
+    },
+    "dark": {
+      "accent": "#AFD4A0"
+    }
+  },
+  "slots": {
+    "node.shell": {
+      "shape": "organic"
+    },
+    "board.canvas": {
+      "pattern": "botanical"
+    },
+    "node.ornament": {
+      "variant": "double-ring"
+    }
+  }
+}

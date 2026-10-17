@@ -1,0 +1,710 @@
+{
+  "profile": "sphere-starter/0.3",
+  "meta": {
+    "id": "example-essay",
+    "title": "エッセイを公開する（架空）"
+  },
+  "revision": 0,
+  "updatedAt": null,
+  "updatedBy": null,
+  "lastChange": "",
+  "lanes": [
+    "進行係A（架空）",
+    "制作係B（架空）",
+    "調査係C（架空）",
+    "判断係D（架空）",
+    "ゲート"
+  ],
+  "problems": [],
+  "actors": [
+    {
+      "id": "owner-1",
+      "label": "進行係A（架空）",
+      "kind": "unknown"
+    },
+    {
+      "id": "owner-2",
+      "label": "判断係D（架空）",
+      "kind": "unknown"
+    },
+    {
+      "id": "owner-3",
+      "label": "調査係C（架空）",
+      "kind": "unknown"
+    },
+    {
+      "id": "owner-4",
+      "label": "制作係B（架空）",
+      "kind": "unknown"
+    },
+    {
+      "id": "fictional-reviewer",
+      "label": "確認係E（架空）",
+      "kind": "human"
+    }
+  ],
+  "currents": [
+    "P1 02-90-00",
+    "P1 03-90-00"
+  ],
+  "nodes": [
+    {
+      "id": "example-essay",
+      "order": 0,
+      "kind": "project",
+      "label": "エッセイを公開する（架空）",
+      "lane": "",
+      "owner": null,
+      "state": "none",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1",
+      "order": 1,
+      "kind": "phase",
+      "label": "Phase 1",
+      "lane": "",
+      "owner": null,
+      "state": "none",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1 01",
+      "order": 2,
+      "kind": "group",
+      "label": "構想",
+      "lane": "",
+      "owner": null,
+      "state": "returned",
+      "ready": false,
+      "derived": false,
+      "planned": false,
+      "evidence": [
+        {
+          "kind": "artifact",
+          "reference": "fictional-example-record",
+          "summary": "公開サンプル用の架空の記録です。"
+        }
+      ]
+    },
+    {
+      "id": "P1 02",
+      "order": 3,
+      "kind": "group",
+      "label": "初稿",
+      "lane": "",
+      "owner": null,
+      "state": "in_progress",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1 03",
+      "order": 4,
+      "kind": "group",
+      "label": "公開",
+      "lane": "",
+      "owner": null,
+      "state": "scheduled",
+      "ready": false,
+      "derived": false,
+      "planned": true
+    },
+    {
+      "id": "P1 01-00-00",
+      "order": 5,
+      "kind": "management",
+      "label": "管制（構想）",
+      "lane": "進行係A（架空）",
+      "owner": "owner-1",
+      "state": "handed_over",
+      "ready": false,
+      "derived": false,
+      "planned": false,
+      "evidence": [
+        {
+          "kind": "artifact",
+          "reference": "fictional-example-record",
+          "summary": "公開サンプル用の架空の記録です。"
+        }
+      ]
+    },
+    {
+      "id": "P1 01-01-00",
+      "order": 6,
+      "kind": "task",
+      "label": "問いを決める",
+      "lane": "判断係D（架空）",
+      "owner": "owner-2",
+      "state": "returned",
+      "ready": false,
+      "derived": false,
+      "planned": false,
+      "evidence": [
+        {
+          "kind": "artifact",
+          "reference": "fictional-example-record",
+          "summary": "公開サンプル用の架空の記録です。"
+        }
+      ]
+    },
+    {
+      "id": "P1 01-01-01",
+      "order": 7,
+      "kind": "task",
+      "label": "似たテーマの文章を読む",
+      "lane": "調査係C（架空）",
+      "owner": "owner-3",
+      "state": "returned",
+      "ready": false,
+      "derived": true,
+      "planned": false,
+      "evidence": [
+        {
+          "kind": "artifact",
+          "reference": "fictional-example-record",
+          "summary": "公開サンプル用の架空の記録です。"
+        }
+      ]
+    },
+    {
+      "id": "P1 01-02-00",
+      "order": 8,
+      "kind": "task",
+      "label": "構成をつくる",
+      "lane": "制作係B（架空）",
+      "owner": "owner-4",
+      "state": "returned",
+      "ready": false,
+      "derived": false,
+      "planned": false,
+      "evidence": [
+        {
+          "kind": "artifact",
+          "reference": "fictional-example-record",
+          "summary": "公開サンプル用の架空の記録です。"
+        }
+      ]
+    },
+    {
+      "id": "P1 01-02-01",
+      "order": 9,
+      "kind": "task",
+      "label": "別の構成案",
+      "lane": "制作係B（架空）",
+      "owner": "owner-4",
+      "state": "record_only",
+      "ready": false,
+      "derived": true,
+      "planned": false
+    },
+    {
+      "id": "P1 01-90-00",
+      "order": 10,
+      "gateKind": "explicit",
+      "kind": "gate",
+      "label": "構想の確定",
+      "lane": "ゲート",
+      "owner": "owner-2",
+      "state": "passed",
+      "ready": false,
+      "derived": false,
+      "planned": false,
+      "approval": {
+        "actorId": "fictional-reviewer",
+        "recordedAt": "2026-01-01T00:00:00Z",
+        "evidence": "公開サンプル用の架空の承認記録。"
+      }
+    },
+    {
+      "id": "P1 02-00-00",
+      "order": 11,
+      "kind": "management",
+      "label": "管制（初稿）",
+      "lane": "進行係A（架空）",
+      "owner": "owner-1",
+      "state": "in_progress",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1 02-01-00",
+      "order": 12,
+      "kind": "task",
+      "label": "第 1 節を書く",
+      "lane": "制作係B（架空）",
+      "owner": "owner-4",
+      "state": "returned",
+      "ready": false,
+      "derived": false,
+      "planned": false,
+      "evidence": [
+        {
+          "kind": "artifact",
+          "reference": "fictional-example-record",
+          "summary": "公開サンプル用の架空の記録です。"
+        }
+      ]
+    },
+    {
+      "id": "P1 02-02-00",
+      "order": 13,
+      "kind": "task",
+      "label": "第 2 節を書く",
+      "lane": "制作係B（架空）",
+      "owner": "owner-4",
+      "state": "in_progress",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1 02-02-01",
+      "order": 14,
+      "kind": "task",
+      "label": "具体例を探す",
+      "lane": "調査係C（架空）",
+      "owner": "owner-3",
+      "state": "in_progress",
+      "ready": false,
+      "derived": true,
+      "planned": false
+    },
+    {
+      "id": "P1 02-03-00",
+      "order": 15,
+      "kind": "task",
+      "label": "第 3 節を書く",
+      "lane": "制作係B（架空）",
+      "owner": "owner-4",
+      "state": "not_started",
+      "ready": true,
+      "derived": false,
+      "planned": false,
+      "readyReason": "公開サンプル上の前提が満たされているため。"
+    },
+    {
+      "id": "P1 02-04-00",
+      "order": 16,
+      "kind": "task",
+      "label": "図を描く",
+      "lane": "制作係B（架空）",
+      "owner": "owner-4",
+      "state": "not_started",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1 02-05-00",
+      "order": 17,
+      "kind": "task",
+      "label": "題名を決める",
+      "lane": "判断係D（架空）",
+      "owner": "owner-2",
+      "state": "not_started",
+      "ready": true,
+      "derived": false,
+      "planned": false,
+      "readyReason": "公開サンプル上の前提が満たされているため。"
+    },
+    {
+      "id": "P1 02-90-00",
+      "order": 18,
+      "gateKind": "explicit",
+      "kind": "gate",
+      "label": "初稿の確定",
+      "lane": "ゲート",
+      "owner": "owner-2",
+      "state": "pending",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1 03-90-00",
+      "order": 19,
+      "gateKind": "explicit",
+      "kind": "gate",
+      "label": "公開の判断",
+      "lane": "ゲート",
+      "owner": "owner-2",
+      "state": "pending",
+      "ready": false,
+      "derived": false,
+      "planned": true
+    },
+    {
+      "id": "P1 issue-1",
+      "order": 20,
+      "kind": "issue",
+      "label": "引用の利用条件が未確認",
+      "lane": "",
+      "owner": null,
+      "state": "in_progress",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "P1 decision-1",
+      "order": 21,
+      "kind": "decision",
+      "label": "公開先（未確定 #1）",
+      "lane": "",
+      "owner": null,
+      "state": "in_progress",
+      "ready": false,
+      "derived": false,
+      "planned": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-blocks-000001",
+      "from": "P1 issue-1",
+      "to": "P1 02-90-00",
+      "kind": "blocks",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000002",
+      "from": "P1 01-00-00",
+      "to": "P1 01-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000003",
+      "from": "P1 01-01-00",
+      "to": "P1 01-02-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000004",
+      "from": "P1 01-01-00",
+      "to": "P1 01-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000005",
+      "from": "P1 01-02-00",
+      "to": "P1 01-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000006",
+      "from": "P1 01-90-00",
+      "to": "P1 02-01-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000007",
+      "from": "P1 02-00-00",
+      "to": "P1 02-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000008",
+      "from": "P1 02-01-00",
+      "to": "P1 02-02-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000009",
+      "from": "P1 02-01-00",
+      "to": "P1 02-03-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000010",
+      "from": "P1 02-01-00",
+      "to": "P1 02-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000011",
+      "from": "P1 02-02-00",
+      "to": "P1 02-04-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000012",
+      "from": "P1 02-02-00",
+      "to": "P1 02-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000013",
+      "from": "P1 02-03-00",
+      "to": "P1 02-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000014",
+      "from": "P1 02-04-00",
+      "to": "P1 02-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000015",
+      "from": "P1 02-05-00",
+      "to": "P1 02-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-dependency-000016",
+      "from": "P1 02-90-00",
+      "to": "P1 03-90-00",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-origin-000017",
+      "from": "P1 01-01-00",
+      "to": "P1 01-01-01",
+      "kind": "origin",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-origin-000018",
+      "from": "P1 01-02-00",
+      "to": "P1 01-02-01",
+      "kind": "origin",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-origin-000019",
+      "from": "P1 02-02-00",
+      "to": "P1 02-02-01",
+      "kind": "origin",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000020",
+      "from": "P1 01",
+      "to": "P1 01-00-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000021",
+      "from": "P1 01",
+      "to": "P1 01-01-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000022",
+      "from": "P1 01",
+      "to": "P1 01-02-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000023",
+      "from": "P1 01",
+      "to": "P1 01-90-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000024",
+      "from": "P1 01-01-00",
+      "to": "P1 01-01-01",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000025",
+      "from": "P1 01-02-00",
+      "to": "P1 01-02-01",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000026",
+      "from": "P1 02",
+      "to": "P1 02-00-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000027",
+      "from": "P1 02",
+      "to": "P1 02-01-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000028",
+      "from": "P1 02",
+      "to": "P1 02-02-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000029",
+      "from": "P1 02",
+      "to": "P1 02-03-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000030",
+      "from": "P1 02",
+      "to": "P1 02-04-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000031",
+      "from": "P1 02",
+      "to": "P1 02-05-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000032",
+      "from": "P1 02",
+      "to": "P1 02-90-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000033",
+      "from": "P1 02-02-00",
+      "to": "P1 02-02-01",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000034",
+      "from": "P1 02-02-01",
+      "to": "P1 issue-1",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000035",
+      "from": "P1 03",
+      "to": "P1 03-90-00",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000036",
+      "from": "P1",
+      "to": "P1 01",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000037",
+      "from": "P1",
+      "to": "P1 02",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000038",
+      "from": "P1",
+      "to": "P1 03",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000039",
+      "from": "P1",
+      "to": "P1 decision-1",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-parent-000040",
+      "from": "example-essay",
+      "to": "P1",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-return-000041",
+      "from": "P1 01-01-01",
+      "to": "P1 01-01-00",
+      "kind": "return",
+      "active": true,
+      "certainty": "explicit"
+    },
+    {
+      "id": "edge-return-000042",
+      "from": "P1 02-02-01",
+      "to": "P1 02-02-00",
+      "kind": "return",
+      "active": true,
+      "certainty": "explicit"
+    }
+  ],
+  "regions": [],
+  "layout": {
+    "mode": "auto"
+  }
+}

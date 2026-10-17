@@ -1,0 +1,384 @@
+{
+  "profile": "sphere-starter/0.3",
+  "meta": {
+    "title": "アイデアを、進められる地図へ。",
+    "description": "Sphere Board starter · 架空の表示・運用fixture。実際の進捗を表すものではありません。",
+    "isDemo": true
+  },
+  "revision": 0,
+  "updatedAt": null,
+  "updatedBy": null,
+  "actors": [
+    {
+      "id": "human",
+      "label": "Maintainer（架空）",
+      "kind": "human"
+    },
+    {
+      "id": "planner",
+      "label": "Planner AI（架空）",
+      "kind": "ai"
+    },
+    {
+      "id": "builder",
+      "label": "Builder AI（架空）",
+      "kind": "ai"
+    }
+  ],
+  "currents": [
+    "renderer",
+    "theme",
+    "workflow"
+  ],
+  "nodes": [
+    {
+      "id": "purpose",
+      "kind": "task",
+      "label": "目的を定義する",
+      "description": "このmapは画面・更新テスト用の架空データです。実際のプロジェクトの完了報告ではありません。",
+      "x": 125,
+      "y": 220,
+      "owner": "human",
+      "state": "returned",
+      "ready": false,
+      "acceptance": [],
+      "evidence": [
+        {
+          "kind": "user",
+          "reference": "fixture:demo-only",
+          "summary": "架空サンプルで成果を本線へ回収したという設定。実作業の証拠ではない。"
+        }
+      ],
+      "lane": "判断（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "input",
+      "kind": "task",
+      "label": "計画を構造に変える",
+      "description": "WBSや文章を、一つの持ち運べるmap.jsonへ。",
+      "x": 355,
+      "y": 160,
+      "owner": "planner",
+      "state": "returned",
+      "ready": false,
+      "acceptance": [],
+      "evidence": [
+        {
+          "kind": "user",
+          "reference": "fixture:demo-only",
+          "summary": "架空サンプルの完了条件。実作業の証拠ではない。"
+        }
+      ],
+      "lane": "設計（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "contract",
+      "kind": "gate",
+      "label": "意味構造を固定",
+      "description": "識別子、関係、現在地の意味を固定する。承認記録は架空fixture。",
+      "x": 565,
+      "y": 220,
+      "owner": "human",
+      "state": "passed",
+      "ready": false,
+      "acceptance": [],
+      "evidence": [
+        {
+          "kind": "user",
+          "reference": "fixture:demo-only",
+          "summary": "架空サンプルの完了条件。実作業の証拠ではない。"
+        }
+      ],
+      "approval": {
+        "actorId": "human",
+        "evidence": "fixture:synthetic-human-approval",
+        "recordedAt": "2026-10-05T00:00:00Z"
+      },
+      "lane": "判断（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "renderer",
+      "kind": "task",
+      "label": "Sphere Board（スフィアボード）を描画",
+      "description": "同じ座標に、同じ意味を。見た目だけを切り替える。",
+      "x": 795,
+      "y": 220,
+      "owner": "builder",
+      "state": "in_progress",
+      "ready": true,
+      "acceptance": [
+        "全関係を表示する",
+        "キーボードで各ノードを選べる"
+      ],
+      "evidence": [],
+      "readyReason": "デモ条件：前提の確認が済み、この作業の着手が許可されている。",
+      "lane": "実装（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "quality",
+      "kind": "gate",
+      "label": "表示と更新を検証",
+      "description": "テストの成功と人間の承認を分けて記録する。",
+      "x": 1030,
+      "y": 220,
+      "owner": "human",
+      "state": "pending",
+      "ready": false,
+      "acceptance": [],
+      "evidence": [],
+      "lane": "判断（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "release",
+      "kind": "task",
+      "label": "ローカル配布物を仕上げる",
+      "description": "ライセンスは未定のまま保持し、ローカルで確認する架空の計画。公開はしない。",
+      "x": 1250,
+      "y": 220,
+      "owner": "human",
+      "state": "not_started",
+      "ready": false,
+      "acceptance": [],
+      "evidence": [],
+      "lane": "判断（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "actor-view",
+      "kind": "actor",
+      "label": "共同作業者",
+      "description": "人間とAIは、同じ台帳を参照する。",
+      "x": 125,
+      "y": 490,
+      "owner": "human",
+      "state": "unknown",
+      "ready": null,
+      "acceptance": [],
+      "evidence": [],
+      "lane": "判断（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "prompt",
+      "kind": "task",
+      "label": "map作成プロンプト",
+      "description": "入力にない担当者・締切・承認を作らない。",
+      "x": 355,
+      "y": 475,
+      "owner": "planner",
+      "state": "not_started",
+      "ready": true,
+      "acceptance": [],
+      "evidence": [],
+      "readyReason": "デモ条件：前提の確認が済み、この作業の着手が許可されている。",
+      "lane": "設計（架空）",
+      "derived": true,
+      "planned": false
+    },
+    {
+      "id": "theme",
+      "kind": "task",
+      "label": "スキンを設計する",
+      "description": "作業中だが、カスタム描画の境界について未解決の課題がある。currentとreadyは別の軸。",
+      "x": 565,
+      "y": 475,
+      "owner": "planner",
+      "state": "in_progress",
+      "ready": false,
+      "acceptance": [],
+      "evidence": [],
+      "lane": "設計（架空）",
+      "derived": true,
+      "planned": false
+    },
+    {
+      "id": "workflow",
+      "kind": "task",
+      "label": "AI更新ルール",
+      "description": "根拠付き更新、複数current、競合検出を実装する。",
+      "x": 795,
+      "y": 475,
+      "owner": "builder",
+      "state": "in_progress",
+      "ready": true,
+      "acceptance": [],
+      "evidence": [],
+      "readyReason": "デモ条件：前提の確認が済み、この作業の着手が許可されている。",
+      "lane": "実装（架空）",
+      "derived": true,
+      "planned": false
+    },
+    {
+      "id": "security",
+      "kind": "issue",
+      "label": "任意コードは許可？",
+      "description": "テーマの任意コードを許可しない方針を検討する架空の小課題。theme を妨げる。回収先の線ではない。",
+      "x": 1030,
+      "y": 475,
+      "owner": "builder",
+      "state": "in_progress",
+      "ready": false,
+      "acceptance": [],
+      "evidence": [],
+      "lane": "実装（架空）",
+      "derived": false,
+      "planned": false
+    },
+    {
+      "id": "scope",
+      "kind": "decision",
+      "label": "利用範囲を決める",
+      "description": "承認なしにAIが決定済みへ変更してはならない。",
+      "x": 1250,
+      "y": 475,
+      "owner": "human",
+      "state": "not_started",
+      "ready": null,
+      "acceptance": [],
+      "evidence": [],
+      "lane": "判断（架空）",
+      "derived": false,
+      "planned": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "from": "purpose",
+      "to": "input",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e02",
+      "from": "input",
+      "to": "contract",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e03",
+      "from": "contract",
+      "to": "renderer",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e04",
+      "from": "renderer",
+      "to": "quality",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e05",
+      "from": "quality",
+      "to": "release",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e06",
+      "from": "actor-view",
+      "to": "purpose",
+      "kind": "origin",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e07",
+      "from": "input",
+      "to": "prompt",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e08",
+      "from": "contract",
+      "to": "theme",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e09",
+      "from": "renderer",
+      "to": "workflow",
+      "kind": "parent",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e10",
+      "from": "security",
+      "to": "theme",
+      "kind": "blocks",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    },
+    {
+      "id": "e11",
+      "from": "workflow",
+      "to": "renderer",
+      "kind": "return",
+      "active": true,
+      "certainty": "explicit",
+      "note": "架空: 派生した運用設計の成果を本線の実装へ戻す回収先。差し戻しではない。"
+    },
+    {
+      "id": "e12",
+      "from": "scope",
+      "to": "release",
+      "kind": "dependency",
+      "active": true,
+      "certainty": "explicit",
+      "note": ""
+    }
+  ],
+  "regions": [
+    {
+      "id": "future",
+      "kind": "planned",
+      "label": "NEXT HORIZON / 次の計画領域",
+      "x": 925,
+      "y": 95,
+      "width": 430,
+      "height": 505
+    }
+  ],
+  "lastChange": "",
+  "lanes": [
+    "設計（架空）",
+    "実装（架空）",
+    "判断（架空）"
+  ],
+  "problems": []
+}
