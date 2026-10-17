@@ -4,9 +4,9 @@
 
 Sphere Board renders a `map.json` ledger or plan as a read-only **Sphere Board**. It does not edit planning facts in the board. The bundled viewer reads the `sphere-starter/0.3` map shape, lays it out, and lets you inspect nodes, current positions, readiness, relations, gates, lanes, and themes.
 
-![Sphere Board in light mode](preview/v0.5.0/readme-light.png)
+![Three-stage schematic of Sphere Board](docs/paper/figure-1.svg)
 
-![Sphere Board in dark mode](preview/v0.5.0/readme-dark.png)
+*Figure 1 from the [short paper](docs/paper/) (CC BY 4.0). A schematic, not a screenshot.*
 
 ## How this was built
 

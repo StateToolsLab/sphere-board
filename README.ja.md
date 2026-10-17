@@ -4,9 +4,9 @@
 
 Sphere Board（スフィアボード）は、台帳や計画の `map.json` を、見るだけの **Sphere Board** として描くためのビューアです。Sphere Board から計画事実を編集しません。同梱ビューアは `sphere-starter/0.3` の map を読み、ノード、現在地、Ready、関係、ゲート、レーン、テーマを表示します。
 
-![Sphere Board・ライト](preview/v0.5.0/readme-light.png)
+![Sphere Board の三工程の模式図](docs/paper/figure-1.svg)
 
-![Sphere Board・ダーク](preview/v0.5.0/readme-dark.png)
+*[短い論文](docs/paper/)の図 1（CC BY 4.0）。模式図で、画面の写しではありません。*
 
 ## どう作ったか
 

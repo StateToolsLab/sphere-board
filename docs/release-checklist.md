@@ -9,5 +9,5 @@
 - `python tests/schema_parity.py` passes.
 - `node tools/build.mjs --check` passes.
 - `node tools/verify-release.mjs` passes.
-- Only the current `preview/v0.5.0/` README screenshots and state-shape sheets are kept in the public repository; older preview images were removed. Image text is outside the v0.5.1 wording update.
+- Only the `preview/v0.5.0/` viewer screenshots and the current state-shape sheets are kept in the public repository; older preview images were removed. Image text is outside the v0.5.1 wording update.
 - Public archive contains only Starter-facing runtime, docs, examples, product templates, and release verification material.

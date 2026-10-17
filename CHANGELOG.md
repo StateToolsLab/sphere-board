@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- The README (English and Japanese) now opens with Figure 1 of the short paper (`docs/paper/figure-1.svg`) instead of the v0.5.0 screenshots. The screenshots stay under `preview/v0.5.0/`. Documentation only; no code changes.
+
 ## 0.5.1 — Sphere Board
 
 - Set the product name to **Sphere Board** and removed the working-name / product-level Starter label from public headings and version metadata.
