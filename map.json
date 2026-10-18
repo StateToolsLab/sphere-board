@@ -2,44 +2,44 @@
   "profile": "sphere-starter/0.3",
   "meta": {
     "id": "example-essay",
-    "title": "エッセイを公開する（架空）"
+    "title": "Publish an essay (fictional)"
   },
   "revision": 0,
   "updatedAt": null,
   "updatedBy": null,
   "lastChange": "",
   "lanes": [
-    "進行係A（架空）",
-    "制作係B（架空）",
-    "調査係C（架空）",
-    "判断係D（架空）",
-    "ゲート"
+    "Coordinator A (fictional)",
+    "Creator B (fictional)",
+    "Researcher C (fictional)",
+    "Decision maker D (fictional)",
+    "Gates"
   ],
   "problems": [],
   "actors": [
     {
       "id": "owner-1",
-      "label": "進行係A（架空）",
+      "label": "Coordinator A (fictional)",
       "kind": "unknown"
     },
     {
       "id": "owner-2",
-      "label": "判断係D（架空）",
+      "label": "Decision maker D (fictional)",
       "kind": "unknown"
     },
     {
       "id": "owner-3",
-      "label": "調査係C（架空）",
+      "label": "Researcher C (fictional)",
       "kind": "unknown"
     },
     {
       "id": "owner-4",
-      "label": "制作係B（架空）",
+      "label": "Creator B (fictional)",
       "kind": "unknown"
     },
     {
       "id": "fictional-reviewer",
-      "label": "確認係E（架空）",
+      "label": "Reviewer E (fictional)",
       "kind": "human"
     }
   ],
@@ -52,7 +52,7 @@
       "id": "example-essay",
       "order": 0,
       "kind": "project",
-      "label": "エッセイを公開する（架空）",
+      "label": "Publish an essay (fictional)",
       "lane": "",
       "owner": null,
       "state": "none",
@@ -76,7 +76,7 @@
       "id": "P1 01",
       "order": 2,
       "kind": "group",
-      "label": "構想",
+      "label": "Concept",
       "lane": "",
       "owner": null,
       "state": "returned",
@@ -87,7 +87,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -95,7 +95,7 @@
       "id": "P1 02",
       "order": 3,
       "kind": "group",
-      "label": "初稿",
+      "label": "First draft",
       "lane": "",
       "owner": null,
       "state": "in_progress",
@@ -107,7 +107,7 @@
       "id": "P1 03",
       "order": 4,
       "kind": "group",
-      "label": "公開",
+      "label": "Publication",
       "lane": "",
       "owner": null,
       "state": "scheduled",
@@ -119,8 +119,8 @@
       "id": "P1 01-00-00",
       "order": 5,
       "kind": "management",
-      "label": "管制（構想）",
-      "lane": "進行係A（架空）",
+      "label": "Coordinate the concept stage",
+      "lane": "Coordinator A (fictional)",
       "owner": "owner-1",
       "state": "handed_over",
       "ready": false,
@@ -130,7 +130,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -138,8 +138,8 @@
       "id": "P1 01-01-00",
       "order": 6,
       "kind": "task",
-      "label": "問いを決める",
-      "lane": "判断係D（架空）",
+      "label": "Define the question",
+      "lane": "Decision maker D (fictional)",
       "owner": "owner-2",
       "state": "returned",
       "ready": false,
@@ -149,7 +149,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -157,8 +157,8 @@
       "id": "P1 01-01-01",
       "order": 7,
       "kind": "task",
-      "label": "似たテーマの文章を読む",
-      "lane": "調査係C（架空）",
+      "label": "Read essays on related themes",
+      "lane": "Researcher C (fictional)",
       "owner": "owner-3",
       "state": "returned",
       "ready": false,
@@ -168,7 +168,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -176,8 +176,8 @@
       "id": "P1 01-02-00",
       "order": 8,
       "kind": "task",
-      "label": "構成をつくる",
-      "lane": "制作係B（架空）",
+      "label": "Create an outline",
+      "lane": "Creator B (fictional)",
       "owner": "owner-4",
       "state": "returned",
       "ready": false,
@@ -187,7 +187,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -195,8 +195,8 @@
       "id": "P1 01-02-01",
       "order": 9,
       "kind": "task",
-      "label": "別の構成案",
-      "lane": "制作係B（架空）",
+      "label": "Alternative outline",
+      "lane": "Creator B (fictional)",
       "owner": "owner-4",
       "state": "record_only",
       "ready": false,
@@ -208,8 +208,8 @@
       "order": 10,
       "gateKind": "explicit",
       "kind": "gate",
-      "label": "構想の確定",
-      "lane": "ゲート",
+      "label": "Approve the concept",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "passed",
       "ready": false,
@@ -218,15 +218,15 @@
       "approval": {
         "actorId": "fictional-reviewer",
         "recordedAt": "2026-01-01T00:00:00Z",
-        "evidence": "公開サンプル用の架空の承認記録。"
+        "evidence": "Fictional approval record for a public example."
       }
     },
     {
       "id": "P1 02-00-00",
       "order": 11,
       "kind": "management",
-      "label": "管制（初稿）",
-      "lane": "進行係A（架空）",
+      "label": "Coordinate the first draft",
+      "lane": "Coordinator A (fictional)",
       "owner": "owner-1",
       "state": "in_progress",
       "ready": false,
@@ -237,8 +237,8 @@
       "id": "P1 02-01-00",
       "order": 12,
       "kind": "task",
-      "label": "第 1 節を書く",
-      "lane": "制作係B（架空）",
+      "label": "Write section 1",
+      "lane": "Creator B (fictional)",
       "owner": "owner-4",
       "state": "returned",
       "ready": false,
@@ -248,7 +248,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -256,8 +256,8 @@
       "id": "P1 02-02-00",
       "order": 13,
       "kind": "task",
-      "label": "第 2 節を書く",
-      "lane": "制作係B（架空）",
+      "label": "Write section 2",
+      "lane": "Creator B (fictional)",
       "owner": "owner-4",
       "state": "in_progress",
       "ready": false,
@@ -268,8 +268,8 @@
       "id": "P1 02-02-01",
       "order": 14,
       "kind": "task",
-      "label": "具体例を探す",
-      "lane": "調査係C（架空）",
+      "label": "Find a concrete example",
+      "lane": "Researcher C (fictional)",
       "owner": "owner-3",
       "state": "in_progress",
       "ready": false,
@@ -280,21 +280,21 @@
       "id": "P1 02-03-00",
       "order": 15,
       "kind": "task",
-      "label": "第 3 節を書く",
-      "lane": "制作係B（架空）",
+      "label": "Write section 3",
+      "lane": "Creator B (fictional)",
       "owner": "owner-4",
       "state": "not_started",
       "ready": true,
       "derived": false,
       "planned": false,
-      "readyReason": "公開サンプル上の前提が満たされているため。"
+      "readyReason": "The prerequisites in this fictional example have been met."
     },
     {
       "id": "P1 02-04-00",
       "order": 16,
       "kind": "task",
-      "label": "図を描く",
-      "lane": "制作係B（架空）",
+      "label": "Draw a figure",
+      "lane": "Creator B (fictional)",
       "owner": "owner-4",
       "state": "not_started",
       "ready": false,
@@ -305,22 +305,22 @@
       "id": "P1 02-05-00",
       "order": 17,
       "kind": "task",
-      "label": "題名を決める",
-      "lane": "判断係D（架空）",
+      "label": "Choose a title",
+      "lane": "Decision maker D (fictional)",
       "owner": "owner-2",
       "state": "not_started",
       "ready": true,
       "derived": false,
       "planned": false,
-      "readyReason": "公開サンプル上の前提が満たされているため。"
+      "readyReason": "The prerequisites in this fictional example have been met."
     },
     {
       "id": "P1 02-90-00",
       "order": 18,
       "gateKind": "explicit",
       "kind": "gate",
-      "label": "初稿の確定",
-      "lane": "ゲート",
+      "label": "Approve the first draft",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "pending",
       "ready": false,
@@ -332,8 +332,8 @@
       "order": 19,
       "gateKind": "explicit",
       "kind": "gate",
-      "label": "公開の判断",
-      "lane": "ゲート",
+      "label": "Decide whether to publish",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "pending",
       "ready": false,
@@ -344,7 +344,7 @@
       "id": "P1 issue-1",
       "order": 20,
       "kind": "issue",
-      "label": "引用の利用条件が未確認",
+      "label": "Terms of use for quotations are unconfirmed",
       "lane": "",
       "owner": null,
       "state": "in_progress",
@@ -356,7 +356,7 @@
       "id": "P1 decision-1",
       "order": 21,
       "kind": "decision",
-      "label": "公開先（未確定 #1）",
+      "label": "Publication venue (undecided #1)",
       "lane": "",
       "owner": null,
       "state": "in_progress",

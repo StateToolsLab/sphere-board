@@ -2,10 +2,10 @@
   "themeSpec": "theme-spec/0.1",
   "profile": "sphere-theme/0.1",
   "id": "example-studio",
-  "name": "Example Studio（架空）",
+  "name": "Example Studio (fictional)",
   "version": "0.1.0",
   "layer": "brand",
-  "description": "架空組織の配色サンプル。実在の組織・ブランドとは関係ありません。",
+  "description": "Color sample for a fictional organization, unrelated to any real organization or brand.",
   "tokens": {
     "light": {
       "accent": "#5A3D8C"

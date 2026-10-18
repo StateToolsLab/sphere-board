@@ -1,13 +1,15 @@
-# Release checklist
+# Release checklist — 0.6.0
 
-- `package.json`: name `sphere-board`, version 0.5.1, `private: true`, package license MIT.
-- Root `LICENSE` is the unchanged MIT license for StateToolsLab.
-- `docs/paper/LICENSE` applies CC BY 4.0 to the paper text and points to the canonical Creative Commons URL.
-- English and Japanese README license sections distinguish MIT content from `docs/paper/` text.
-- Public text files contain the finalized Sphere Board naming; the former Japanese product label is absent from non-image files.
-- `node --test tests/*.test.cjs` passes.
-- `python tests/schema_parity.py` passes.
-- `node tools/build.mjs --check` passes.
-- `node tools/verify-release.mjs` passes.
-- Only the `preview/v0.5.0/` viewer screenshots and the current state-shape sheets are kept in the public repository; older preview images were removed. Image text is outside the v0.5.1 wording update.
-- Public archive contains only Starter-facing runtime, docs, examples, product templates, and release verification material.
+- Package version and both viewer headings: 0.6.0; `private: true`; MIT package license.
+- `node tools/build.mjs --check`: both standalone viewers match source bytes.
+- Node tests: all existing and bilingual tests pass; both server routes work.
+- Browser smoke, layout, and finish suites: English and Japanese both pass.
+- Bilingual browser suite: real offline file URLs and local HTTP routes pass.
+- All nine bundled Starter maps pass JSON Schema validation.
+- English HTML, UI/ARIA, themes, and example JSON contain no Japanese characters; Japanese user data remains accepted verbatim.
+- Exactly 15 work-state labels and 6 gate-result labels in both languages; all 21 shapes unchanged.
+- English/Japanese examples retain the same structural facts and exact node geometry.
+- Paper files, Figure 1, MIT license, accepted v0.5.0 screenshots, schemas, common core/layout/camera/CSS match `verification/BASELINE_SHA256SUMS.txt`.
+- Regenerate `FILE_LIST.md` and `SHA256SUMS.txt` using `node tools/release-manifest.mjs`; then run `node tools/verify-release.mjs`.
+- No Python caches, development-only browser binaries, agent scratch files, or private paths in the archive.
+- ZIP creation does not authorize push, tagging, hosting, or release publication.

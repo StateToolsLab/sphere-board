@@ -6,17 +6,21 @@ from pathlib import Path
 import argparse, json, os, shutil, time
 from playwright.sync_api import sync_playwright
 R=Path(__file__).resolve().parents[1]
-HTML=(R/'index.html').read_text()
-FIXTURES={'essay':'examples/essay.json','exhibition':'examples/exhibition.json',**{f'scale-{n}':f'tests/fixtures/scale-{n}.json' for n in [10,60,150,300]}}
+LANG=os.environ.get('SPHERE_LANG','en')
+assert LANG in ['en','ja']
+HTML=(R/('ja/index.html' if LANG=='ja' else 'index.html')).read_text()
+EXAMPLES=R/'examples'/('ja' if LANG=='ja' else '')
+OUT=R/'preview'/'v0.6.0'/LANG;OUT.mkdir(parents=True,exist_ok=True)
+FIXTURES={'essay':str((EXAMPLES/'essay.json').relative_to(R)),'exhibition':str((EXAMPLES/'exhibition.json').relative_to(R)),**{f'scale-{n}':f'tests/fixtures/scale-{n}.json' for n in [10,60,150,300]}}
 parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--fixture',action='append',choices=sorted(FIXTURES));args=parser.parse_args()
 if args.fixture:FIXTURES={k:v for k,v in FIXTURES.items() if k in args.fixture}
 checks=[];errors=[];network=[];screens=[];layouts={};metrics=[]
-(R/'preview/layout').mkdir(parents=True,exist_ok=True)
+(OUT/'layout').mkdir(parents=True,exist_ok=True)
 def ok(name,value=True):
  assert value,name
  checks.append({'name':name,'passed':True})
 def screenshot(q,name):
- file=f'preview/layout/{name}.png';q.screenshot(path=str(R/file),full_page=True);screens.append(file)
+ file=str((OUT/'layout'/f'{name}.png').relative_to(R));q.screenshot(path=str(R/file),full_page=True);screens.append(file)
 def marker_info(q,kind):
  return q.evaluate('''kind=>{const board=document.getElementById('board-scroll').getBoundingClientRect();return [...document.querySelectorAll('.'+kind)].map(e=>{const r=e.getBoundingClientRect();return {width:r.width,height:r.height,inside:r.left>=board.left-1&&r.top>=board.top-1&&r.right<=board.right+1&&r.bottom<=board.bottom+1,stroke:getComputedStyle(e).stroke,display:getComputedStyle(e).display};});}''',kind)
 with sync_playwright() as p:
@@ -54,7 +58,7 @@ with sync_playwright() as p:
     shown=q.evaluate('''()=>{const e=document.querySelector('.edge[data-kind="parent"][data-structural-parent="true"]'),id=e.dataset.to,g=[...document.querySelectorAll('.node')].find(n=>n.dataset.node===id);g.dispatchEvent(new MouseEvent('click',{bubbles:true}));return getComputedStyle(e).display!=='none';}''')
     ok(tag+' selecting a structural parent edge endpoint reveals that edge',shown)
     q.locator('#clear-selection').click()
-   ok(tag+' legend explains structural membership by region','工程・フェーズへの所属は領域で表す' in q.locator('.legend').inner_text())
+   ok(tag+' legend explains structural membership by region',('工程・フェーズへの所属は領域で表す' if LANG=='ja' else 'Stage and phase membership is shown by regions') in q.locator('.legend').inner_text())
    viewport='desktop' if width==1440 else '375'
    screenshot(q,f'{name}-{viewport}-initial')
    q.locator('#zoom-fit').click();q.wait_for_timeout(30)
@@ -74,12 +78,12 @@ with sync_playwright() as p:
     q.locator('#zoom-read').click();target=q.evaluate('__sphere.state().camera.currentId')
     point=q.evaluate('id=>{const e=[...document.querySelectorAll(".node")].find(e=>e.dataset.node===id),m=e.getScreenCTM();return {x:m.e,y:m.f}}',target)
     q.mouse.click(point['x'],point['y']);ok(tag+' pointer selects bead',q.evaluate('__sphere.state().selected')==target)
-    ok(tag+' details expose all textual relationships',all(word in q.locator('.relation-summary').inner_text() for word in ['親','前提','発生元','回収先','妨げ']))
+    ok(tag+' details expose all textual relationships',all(word in q.locator('.relation-summary').inner_text() for word in (['親','前提','発生元','回収先','妨げ'] if LANG=='ja' else ['Parent','Prerequisite','Origin','Return destination','Block'])))
     if width==375:
      panel=q.locator('#detail-panel').bounding_box();ok(tag+' mobile details are bottom sheet',q.locator('#detail-panel').evaluate('(e)=>getComputedStyle(e).position')=='fixed' and abs(panel['y']+panel['height']-1000)<2 and panel['width']<=375)
      screenshot(q,'essay-375-bottom-sheet')
     q.locator('#clear-selection').click();ok(tag+' closing detail does not change camera',q.evaluate('__sphere.state().selected') is None)
-    q.locator('#view-list').click();q.locator('#search').fill('具体例');ok(tag+' list reads relation text',q.locator('.list-item').count()==1 and '発生元' in q.locator('.list-relations').inner_text());q.locator('#search').fill('');q.locator('#view-map').click()
+    q.locator('#view-list').click();q.locator('#search').fill(('具体例' if LANG=='ja' else 'concrete example'));ok(tag+' list reads relation text',q.locator('.list-item').count()==1 and ('発生元' if LANG=='ja' else 'Origin') in q.locator('.list-relations').inner_text());q.locator('#search').fill('');q.locator('#view-map').click()
     before=q.evaluate('__sphere.layout()');cam=q.evaluate('__sphere.state().camera')
     q.locator('#open-settings').click();q.locator('[data-world="plain"]').click();q.locator('#mode').select_option('dark');q.locator('#brand').select_option('example-studio');q.locator('#close-settings').click()
     ok(tag+' theme keeps geometry, seats and camera unchanged',q.evaluate('__sphere.layout()')==before and q.evaluate('__sphere.state().camera')==cam)
@@ -97,6 +101,6 @@ with sync_playwright() as p:
  ok('No uncaught JavaScript errors',not errors)
  ok('No external network requests in screenshot fixture mode',not network)
  browser.close()
-report={'method':'Chromium generated index.html via set_content; explicit same-map fetch fixtures; no real browser URL/file transport.', 'browser':exe or 'Playwright Chromium','passed':len(checks),'failed':0,'errors':errors,'networkRequests':network,'screenshots':screens,'metrics':metrics,'checks':checks}
-(R/'verification'/('browser-layout-results'+(('-'+next(iter(FIXTURES))) if len(FIXTURES)==1 else '')+'.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+report={'method':'Chromium generated index.html via set_content; explicit same-map fetch fixtures; no real browser URL/file transport.', 'language':LANG,'browser':Path(exe).name if exe else 'Playwright Chromium','passed':len(checks),'failed':0,'errors':errors,'networkRequests':network,'screenshots':screens,'metrics':metrics,'checks':checks}
+(R/'verification'/(f'browser-layout-{LANG}'+(('-'+next(iter(FIXTURES))) if len(FIXTURES)==1 else '')+'.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(f'Browser layout: {len(checks)} passed; {len(screens)} screenshots; 0 failed')

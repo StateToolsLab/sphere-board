@@ -1,0 +1,180 @@
+{
+  "method": "Chromium set_content of final built index.html with explicit local fixture fetch; screenshots are real browser captures.",
+  "language": "en",
+  "browser": "chromium",
+  "passed": 37,
+  "failed": 0,
+  "errors": [],
+  "screenshots": [
+    "preview/v0.6.0/en/state-shapes-light.png",
+    "preview/v0.6.0/en/state-shapes-dark.png",
+    "preview/v0.6.0/en/essay-desktop-light-hover.png",
+    "preview/v0.6.0/en/essay-desktop-light-selected.png",
+    "preview/v0.6.0/en/essay-desktop-dark-hover.png",
+    "preview/v0.6.0/en/essay-desktop-dark-selected.png",
+    "preview/v0.6.0/en/essay-375-light-hover.png",
+    "preview/v0.6.0/en/essay-375-light-selected.png",
+    "preview/v0.6.0/en/essay-375-dark-hover.png",
+    "preview/v0.6.0/en/essay-375-dark-selected.png",
+    "preview/v0.6.0/en/exhibition-desktop-light-hover.png",
+    "preview/v0.6.0/en/exhibition-desktop-light-selected.png",
+    "preview/v0.6.0/en/exhibition-desktop-dark-hover.png",
+    "preview/v0.6.0/en/exhibition-desktop-dark-selected.png",
+    "preview/v0.6.0/en/exhibition-375-light-hover.png",
+    "preview/v0.6.0/en/exhibition-375-light-selected.png",
+    "preview/v0.6.0/en/exhibition-375-dark-hover.png",
+    "preview/v0.6.0/en/exhibition-375-dark-selected.png",
+    "preview/v0.6.0/en/readme-light.png",
+    "preview/v0.6.0/en/readme-dark.png"
+  ],
+  "checks": [
+    {
+      "name": "read-only note is visible near board",
+      "passed": true
+    },
+    {
+      "name": "only Core Plain is bundled as World",
+      "passed": true
+    },
+    {
+      "name": "fictional brand sample is present",
+      "passed": true
+    },
+    {
+      "name": "hover records target and shows short tooltip",
+      "passed": true
+    },
+    {
+      "name": "hover reveals related lines softly",
+      "passed": true
+    },
+    {
+      "name": "hover leaves cleanly",
+      "passed": true
+    },
+    {
+      "name": "focused bead always shows focus mark",
+      "passed": true
+    },
+    {
+      "name": "Enter selects focused bead and opens details",
+      "passed": true
+    },
+    {
+      "name": "focus and selection marks are distinct and both visible",
+      "passed": true
+    },
+    {
+      "name": "relation words stay off the board when selected",
+      "passed": true
+    },
+    {
+      "name": "clicking another bead switches selection directly",
+      "passed": true
+    },
+    {
+      "name": "clicking empty board clears selection",
+      "passed": true
+    },
+    {
+      "name": "arrow keys move focus to a nearby bead",
+      "passed": true
+    },
+    {
+      "name": "keyboard selection opens details",
+      "passed": true
+    },
+    {
+      "name": "Escape returns to unselected state",
+      "passed": true
+    },
+    {
+      "name": "gate kind explicit matches viewer language",
+      "passed": true
+    },
+    {
+      "name": "gate kind recheck matches viewer language",
+      "passed": true
+    },
+    {
+      "name": "gate kind event matches viewer language",
+      "passed": true
+    },
+    {
+      "name": "light shape legend contains 15 + 6 entries",
+      "passed": true
+    },
+    {
+      "name": "dark shape legend contains 15 + 6 entries",
+      "passed": true
+    },
+    {
+      "name": "essay/desktop/light hover active",
+      "passed": true
+    },
+    {
+      "name": "essay/desktop/light selection active",
+      "passed": true
+    },
+    {
+      "name": "essay/desktop/dark hover active",
+      "passed": true
+    },
+    {
+      "name": "essay/desktop/dark selection active",
+      "passed": true
+    },
+    {
+      "name": "essay/375/light hover active",
+      "passed": true
+    },
+    {
+      "name": "essay/375/light selection active",
+      "passed": true
+    },
+    {
+      "name": "essay/375/dark hover active",
+      "passed": true
+    },
+    {
+      "name": "essay/375/dark selection active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/desktop/light hover active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/desktop/light selection active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/desktop/dark hover active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/desktop/dark selection active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/375/light hover active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/375/light selection active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/375/dark hover active",
+      "passed": true
+    },
+    {
+      "name": "exhibition/375/dark selection active",
+      "passed": true
+    },
+    {
+      "name": "No uncaught JavaScript errors",
+      "passed": true
+    }
+  ]
+}

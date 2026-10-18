@@ -1,8 +1,8 @@
 {
   "profile": "sphere-starter/0.3",
   "meta": {
-    "title": "アイデアを、進められる地図へ。",
-    "description": "Sphere Board starter · 架空の表示・運用fixture。実際の進捗を表すものではありません。",
+    "title": "Turn ideas into a map for moving work forward.",
+    "description": "Sphere Board starter · fictional display and workflow fixture. This does not represent real progress.",
     "isDemo": true
   },
   "revision": 0,
@@ -11,17 +11,17 @@
   "actors": [
     {
       "id": "human",
-      "label": "Maintainer（架空）",
+      "label": "Maintainer (fictional)",
       "kind": "human"
     },
     {
       "id": "planner",
-      "label": "Planner AI（架空）",
+      "label": "Planner AI (fictional)",
       "kind": "ai"
     },
     {
       "id": "builder",
-      "label": "Builder AI（架空）",
+      "label": "Builder AI (fictional)",
       "kind": "ai"
     }
   ],
@@ -34,8 +34,8 @@
     {
       "id": "purpose",
       "kind": "task",
-      "label": "目的を定義する",
-      "description": "このmapは画面・更新テスト用の架空データです。実際のプロジェクトの完了報告ではありません。",
+      "label": "Define the purpose",
+      "description": "This map contains fictional data for display and update tests. It is not a completion report for a real project.",
       "x": 125,
       "y": 220,
       "owner": "human",
@@ -46,18 +46,18 @@
         {
           "kind": "user",
           "reference": "fixture:demo-only",
-          "summary": "架空サンプルで成果を本線へ回収したという設定。実作業の証拠ではない。"
+          "summary": "This fictional example assumes results were returned to the mainline. It is not evidence of real work."
         }
       ],
-      "lane": "判断（架空）",
+      "lane": "Decisions (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "input",
       "kind": "task",
-      "label": "計画を構造に変える",
-      "description": "WBSや文章を、一つの持ち運べるmap.jsonへ。",
+      "label": "Structure the plan",
+      "description": "Turn a WBS or written outline into one portable map.json.",
       "x": 355,
       "y": 160,
       "owner": "planner",
@@ -68,18 +68,18 @@
         {
           "kind": "user",
           "reference": "fixture:demo-only",
-          "summary": "架空サンプルの完了条件。実作業の証拠ではない。"
+          "summary": "Acceptance criterion for a fictional example. Not evidence of real work."
         }
       ],
-      "lane": "設計（架空）",
+      "lane": "Design (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "contract",
       "kind": "gate",
-      "label": "意味構造を固定",
-      "description": "識別子、関係、現在地の意味を固定する。承認記録は架空fixture。",
+      "label": "Fix the semantic structure",
+      "description": "Fix the meaning of IDs, relations, and current positions. The approval record is a fictional fixture.",
       "x": 565,
       "y": 220,
       "owner": "human",
@@ -90,7 +90,7 @@
         {
           "kind": "user",
           "reference": "fixture:demo-only",
-          "summary": "架空サンプルの完了条件。実作業の証拠ではない。"
+          "summary": "Acceptance criterion for a fictional example. Not evidence of real work."
         }
       ],
       "approval": {
@@ -98,35 +98,35 @@
         "evidence": "fixture:synthetic-human-approval",
         "recordedAt": "2026-10-05T00:00:00Z"
       },
-      "lane": "判断（架空）",
+      "lane": "Decisions (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "renderer",
       "kind": "task",
-      "label": "Sphere Board（スフィアボード）を描画",
-      "description": "同じ座標に、同じ意味を。見た目だけを切り替える。",
+      "label": "Render Sphere Board",
+      "description": "The same meaning at the same coordinates. Change only the appearance.",
       "x": 795,
       "y": 220,
       "owner": "builder",
       "state": "in_progress",
       "ready": true,
       "acceptance": [
-        "全関係を表示する",
-        "キーボードで各ノードを選べる"
+        "Display all relations",
+        "Each node can be selected with the keyboard"
       ],
       "evidence": [],
-      "readyReason": "デモ条件：前提の確認が済み、この作業の着手が許可されている。",
-      "lane": "実装（架空）",
+      "readyReason": "Fictional demo condition: prerequisites have been checked and starting this work is authorized.",
+      "lane": "Implementation (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "quality",
       "kind": "gate",
-      "label": "表示と更新を検証",
-      "description": "テストの成功と人間の承認を分けて記録する。",
+      "label": "Verify display and updates",
+      "description": "Record passing tests and human approval separately.",
       "x": 1030,
       "y": 220,
       "owner": "human",
@@ -134,15 +134,15 @@
       "ready": false,
       "acceptance": [],
       "evidence": [],
-      "lane": "判断（架空）",
+      "lane": "Decisions (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "release",
       "kind": "task",
-      "label": "ローカル配布物を仕上げる",
-      "description": "ライセンスは未定のまま保持し、ローカルで確認する架空の計画。公開はしない。",
+      "label": "Finish the local distribution",
+      "description": "Fictional plan for local review with the license undecided. No publication.",
       "x": 1250,
       "y": 220,
       "owner": "human",
@@ -150,15 +150,15 @@
       "ready": false,
       "acceptance": [],
       "evidence": [],
-      "lane": "判断（架空）",
+      "lane": "Decisions (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "actor-view",
       "kind": "actor",
-      "label": "共同作業者",
-      "description": "人間とAIは、同じ台帳を参照する。",
+      "label": "Collaborators",
+      "description": "People and AI refer to the same ledger.",
       "x": 125,
       "y": 490,
       "owner": "human",
@@ -166,15 +166,15 @@
       "ready": null,
       "acceptance": [],
       "evidence": [],
-      "lane": "判断（架空）",
+      "lane": "Decisions (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "prompt",
       "kind": "task",
-      "label": "map作成プロンプト",
-      "description": "入力にない担当者・締切・承認を作らない。",
+      "label": "Map creation prompt",
+      "description": "Do not invent owners, deadlines, or approvals absent from the input.",
       "x": 355,
       "y": 475,
       "owner": "planner",
@@ -182,16 +182,16 @@
       "ready": true,
       "acceptance": [],
       "evidence": [],
-      "readyReason": "デモ条件：前提の確認が済み、この作業の着手が許可されている。",
-      "lane": "設計（架空）",
+      "readyReason": "Fictional demo condition: prerequisites have been checked and starting this work is authorized.",
+      "lane": "Design (fictional)",
       "derived": true,
       "planned": false
     },
     {
       "id": "theme",
       "kind": "task",
-      "label": "スキンを設計する",
-      "description": "作業中だが、カスタム描画の境界について未解決の課題がある。currentとreadyは別の軸。",
+      "label": "Design the skin",
+      "description": "Work is in progress, with an unresolved issue about custom-rendering boundaries. Current position and readiness are independent.",
       "x": 565,
       "y": 475,
       "owner": "planner",
@@ -199,15 +199,15 @@
       "ready": false,
       "acceptance": [],
       "evidence": [],
-      "lane": "設計（架空）",
+      "lane": "Design (fictional)",
       "derived": true,
       "planned": false
     },
     {
       "id": "workflow",
       "kind": "task",
-      "label": "AI更新ルール",
-      "description": "根拠付き更新、複数current、競合検出を実装する。",
+      "label": "AI update rules",
+      "description": "Implement evidence-based updates, multiple current positions, and conflict detection.",
       "x": 795,
       "y": 475,
       "owner": "builder",
@@ -215,16 +215,16 @@
       "ready": true,
       "acceptance": [],
       "evidence": [],
-      "readyReason": "デモ条件：前提の確認が済み、この作業の着手が許可されている。",
-      "lane": "実装（架空）",
+      "readyReason": "Fictional demo condition: prerequisites have been checked and starting this work is authorized.",
+      "lane": "Implementation (fictional)",
       "derived": true,
       "planned": false
     },
     {
       "id": "security",
       "kind": "issue",
-      "label": "任意コードは許可？",
-      "description": "テーマの任意コードを許可しない方針を検討する架空の小課題。theme を妨げる。回収先の線ではない。",
+      "label": "Allow arbitrary code?",
+      "description": "Fictional issue exploring a policy against arbitrary code in themes. It blocks theme; this is not a return relation.",
       "x": 1030,
       "y": 475,
       "owner": "builder",
@@ -232,15 +232,15 @@
       "ready": false,
       "acceptance": [],
       "evidence": [],
-      "lane": "実装（架空）",
+      "lane": "Implementation (fictional)",
       "derived": false,
       "planned": false
     },
     {
       "id": "scope",
       "kind": "decision",
-      "label": "利用範囲を決める",
-      "description": "承認なしにAIが決定済みへ変更してはならない。",
+      "label": "Define the scope of use",
+      "description": "AI must not mark a decision as made without approval.",
       "x": 1250,
       "y": 475,
       "owner": "human",
@@ -248,7 +248,7 @@
       "ready": null,
       "acceptance": [],
       "evidence": [],
-      "lane": "判断（架空）",
+      "lane": "Decisions (fictional)",
       "derived": false,
       "planned": false
     }
@@ -351,7 +351,7 @@
       "kind": "return",
       "active": true,
       "certainty": "explicit",
-      "note": "架空: 派生した運用設計の成果を本線の実装へ戻す回収先。差し戻しではない。"
+      "note": "Fictional: the destination for returning derived workflow-design results to mainline implementation. This is not a gate sending work back."
     },
     {
       "id": "e12",
@@ -367,7 +367,7 @@
     {
       "id": "future",
       "kind": "planned",
-      "label": "NEXT HORIZON / 次の計画領域",
+      "label": "NEXT HORIZON / Next planning area",
       "x": 925,
       "y": 95,
       "width": 430,
@@ -376,9 +376,9 @@
   ],
   "lastChange": "",
   "lanes": [
-    "設計（架空）",
-    "実装（架空）",
-    "判断（架空）"
+    "Design (fictional)",
+    "Implementation (fictional)",
+    "Decisions (fictional)"
   ],
   "problems": []
 }

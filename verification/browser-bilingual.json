@@ -1,0 +1,152 @@
+{
+  "method": "Real Chromium file URL and loopback HTTP navigation; read-only Node server; actual file input paths.",
+  "passed": 36,
+  "failed": 0,
+  "errors": [],
+  "checks": [
+    {
+      "name": "en: real file URL opens with correct bundled sample",
+      "passed": true
+    },
+    {
+      "name": "English built-in UI and ARIA contain no Japanese",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: example-essay",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 01",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 03",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 01-00-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 01-01-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 01-01-01",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 01-02-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 01-02-01",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 01-90-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-00-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-01-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-02-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-02-01",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-03-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-04-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-05-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 02-90-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 03-90-00",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 issue-1",
+      "passed": true
+    },
+    {
+      "name": "English details and ARIA: P1 decision-1",
+      "passed": true
+    },
+    {
+      "name": "English empty search",
+      "passed": true
+    },
+    {
+      "name": "English theme settings",
+      "passed": true
+    },
+    {
+      "name": "English JSON error",
+      "passed": true
+    },
+    {
+      "name": "English unsupported-map errors",
+      "passed": true
+    },
+    {
+      "name": "English empty board",
+      "passed": true
+    },
+    {
+      "name": "English viewer accepts Japanese data verbatim",
+      "passed": true
+    },
+    {
+      "name": "en: real HTTP viewer reads selected map",
+      "passed": true
+    },
+    {
+      "name": "en: selected map has not been rewritten",
+      "passed": true
+    },
+    {
+      "name": "ja: real file URL opens with correct bundled sample",
+      "passed": true
+    },
+    {
+      "name": "ja: real HTTP viewer reads selected map",
+      "passed": true
+    },
+    {
+      "name": "ja: selected map has not been rewritten",
+      "passed": true
+    },
+    {
+      "name": "No uncaught JavaScript errors",
+      "passed": true
+    }
+  ]
+}

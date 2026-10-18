@@ -1,6 +1,6 @@
 {
   "name": "sphere-board",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "private": true,
   "license": "MIT",
   "description": "Read-only local Sphere Board renderer for sphere-starter/0.3 maps",

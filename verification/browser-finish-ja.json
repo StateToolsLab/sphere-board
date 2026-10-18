@@ -1,30 +1,31 @@
 {
   "method": "Chromium set_content of final built index.html with explicit local fixture fetch; screenshots are real browser captures.",
-  "browser": "/usr/bin/chromium",
+  "language": "ja",
+  "browser": "chromium",
   "passed": 37,
   "failed": 0,
   "errors": [],
   "screenshots": [
-    "preview/v0.5.0/state-shapes-light.png",
-    "preview/v0.5.0/state-shapes-dark.png",
-    "preview/v0.5.0/essay-desktop-light-hover.png",
-    "preview/v0.5.0/essay-desktop-light-selected.png",
-    "preview/v0.5.0/essay-desktop-dark-hover.png",
-    "preview/v0.5.0/essay-desktop-dark-selected.png",
-    "preview/v0.5.0/essay-375-light-hover.png",
-    "preview/v0.5.0/essay-375-light-selected.png",
-    "preview/v0.5.0/essay-375-dark-hover.png",
-    "preview/v0.5.0/essay-375-dark-selected.png",
-    "preview/v0.5.0/exhibition-desktop-light-hover.png",
-    "preview/v0.5.0/exhibition-desktop-light-selected.png",
-    "preview/v0.5.0/exhibition-desktop-dark-hover.png",
-    "preview/v0.5.0/exhibition-desktop-dark-selected.png",
-    "preview/v0.5.0/exhibition-375-light-hover.png",
-    "preview/v0.5.0/exhibition-375-light-selected.png",
-    "preview/v0.5.0/exhibition-375-dark-hover.png",
-    "preview/v0.5.0/exhibition-375-dark-selected.png",
-    "preview/v0.5.0/readme-light.png",
-    "preview/v0.5.0/readme-dark.png"
+    "preview/v0.6.0/ja/state-shapes-light.png",
+    "preview/v0.6.0/ja/state-shapes-dark.png",
+    "preview/v0.6.0/ja/essay-desktop-light-hover.png",
+    "preview/v0.6.0/ja/essay-desktop-light-selected.png",
+    "preview/v0.6.0/ja/essay-desktop-dark-hover.png",
+    "preview/v0.6.0/ja/essay-desktop-dark-selected.png",
+    "preview/v0.6.0/ja/essay-375-light-hover.png",
+    "preview/v0.6.0/ja/essay-375-light-selected.png",
+    "preview/v0.6.0/ja/essay-375-dark-hover.png",
+    "preview/v0.6.0/ja/essay-375-dark-selected.png",
+    "preview/v0.6.0/ja/exhibition-desktop-light-hover.png",
+    "preview/v0.6.0/ja/exhibition-desktop-light-selected.png",
+    "preview/v0.6.0/ja/exhibition-desktop-dark-hover.png",
+    "preview/v0.6.0/ja/exhibition-desktop-dark-selected.png",
+    "preview/v0.6.0/ja/exhibition-375-light-hover.png",
+    "preview/v0.6.0/ja/exhibition-375-light-selected.png",
+    "preview/v0.6.0/ja/exhibition-375-dark-hover.png",
+    "preview/v0.6.0/ja/exhibition-375-dark-selected.png",
+    "preview/v0.6.0/ja/readme-light.png",
+    "preview/v0.6.0/ja/readme-dark.png"
   ],
   "checks": [
     {
@@ -88,15 +89,15 @@
       "passed": true
     },
     {
-      "name": "gate kind explicit is Japanese on board",
+      "name": "gate kind explicit matches viewer language",
       "passed": true
     },
     {
-      "name": "gate kind recheck is Japanese on board",
+      "name": "gate kind recheck matches viewer language",
       "passed": true
     },
     {
-      "name": "gate kind event is Japanese on board",
+      "name": "gate kind event matches viewer language",
       "passed": true
     },
     {

@@ -6,7 +6,11 @@ from pathlib import Path
 import copy, json, os, shutil, time
 from playwright.sync_api import sync_playwright
 R=Path(__file__).resolve().parents[1];(R/'preview').mkdir(exist_ok=True);(R/'verification').mkdir(exist_ok=True)
-HTML=(R/'index.html').read_text();sample=json.loads((R/'examples/sample-map.json').read_text())
+LANG=os.environ.get('SPHERE_LANG','en')
+assert LANG in ['en','ja']
+HTML=(R/('ja/index.html' if LANG=='ja' else 'index.html')).read_text()
+EXAMPLES=R/'examples'/('ja' if LANG=='ja' else '')
+OUT=R/'preview'/'v0.6.0'/LANG;OUT.mkdir(parents=True,exist_ok=True);sample=json.loads((EXAMPLES/'sample-map.json').read_text())
 worlds=[json.loads(p.read_text()) for p in sorted((R/'themes/world').glob('*.json'))]
 checks=[];errors=[]
 def ok(name,condition=True):
@@ -32,7 +36,7 @@ with sync_playwright() as p:
  page=init_page(browser,1440)
  ok('Initial board has 12 nodes and settings are closed',not page.locator('#settings').is_visible())
  ok('Initial semantic snapshot equals fixture',page.evaluate('__sphere.snapshot()')==sample)
- page.screenshot(path=str(R/'preview/plain-desktop.png'),full_page=True)
+ page.screenshot(path=str(OUT/'plain-desktop.png'),full_page=True)
  page.locator('[data-node="renderer"]').focus();page.keyboard.press('Enter')
  ok('Keyboard selects node independently of 3 currents',page.evaluate('__sphere.state().selected')=='renderer' and len(page.evaluate('__sphere.snapshot().currents'))==3)
  fixed_gate=page.locator('[data-node="quality"] .shell').get_attribute('d')
@@ -44,8 +48,8 @@ with sync_playwright() as p:
     page.locator('[data-world="'+w['id']+'"]').click();page.locator('#mode').select_option(mode);page.locator('#brand').select_option(brand)
     ok(f'Unchanged semantics {w["id"]}/{mode}/{brand}',page.evaluate('__sphere.snapshot()')==sample and page.evaluate('__sphere.state().selected')=='renderer' and page.locator('[data-node="quality"] .shell').get_attribute('d')==fixed_gate)
  page.locator('[data-world="plain"]').click();page.locator('#mode').select_option('dark');page.locator('#brand').select_option('none')
- page.locator('#close-settings').click();page.screenshot(path=str(R/'preview/plain-dark-desktop.png'),full_page=True)
- page.locator('#open-settings').click();page.screenshot(path=str(R/'preview/settings-theme-lab.png'),full_page=True)
+ page.locator('#close-settings').click();page.screenshot(path=str(OUT/'plain-dark-desktop.png'),full_page=True)
+ page.locator('#open-settings').click();page.screenshot(path=str(OUT/'settings-theme-lab.png'),full_page=True)
  page.keyboard.press('Escape')
  ok('Escape closes dialog and focus returns',not page.locator('#settings').is_visible() and page.evaluate('document.activeElement.id')=='open-settings')
  # User theme upload goes through the actual file-input path.
@@ -63,7 +67,7 @@ with sync_playwright() as p:
  nextmap['nodes'][3]['description']='Changed by simulated worker.'
  page.evaluate('text=>window.__fixtureText=text',json.dumps(nextmap));wait(page, '__sphere.snapshot().revision===1',timeout=6000)
  ok('Polling reads a valid updated revision and keeps selection',page.evaluate('__sphere.state().selected')=='renderer')
- page.evaluate('window.__fixtureText="{invalid json"');wait(page, 'document.querySelector("#notice").classList.contains("error") && document.querySelector("#notice").textContent.includes("再読込")',timeout=6000)
+ page.evaluate('window.__fixtureText="{invalid json"');wait(page, 'document.querySelector("#notice").classList.contains("error") && document.querySelector("#notice").textContent.includes('+json.dumps('再読込' if LANG=='ja' else 'Reload failed')+')',timeout=6000)
  ok('Invalid reload keeps last valid map',page.evaluate('__sphere.snapshot().revision')==1)
  page.evaluate('text=>window.__fixtureText=text',json.dumps(nextmap));wait(page, 'document.querySelector("#notice").hidden',timeout=6000)
  ok('Recovery clears stale error')
@@ -75,7 +79,7 @@ with sync_playwright() as p:
  unsupported={'schema':'control'+'-map/0.2','project_key':'fictional'}
  page.locator('#map-file').set_input_files({'name':'unsupported.json','mimeType':'application/json','buffer':json.dumps(unsupported).encode()})
  wait(page, 'document.querySelector("#map-file").value===""')
- ok('Unsupported input stops drawing with a clear Starter-only message',page.evaluate('__sphere.state().loadBlocked') and 'この形は読めません' in page.locator('#problems').inner_text())
+ ok('Unsupported input stops drawing with a clear Starter-only message',page.evaluate('__sphere.state().loadBlocked') and ('この形は読めません' if LANG=='ja' else 'Unsupported format') in page.locator('#problems').inner_text())
  page.locator('#map-file').set_input_files({'name':'sample.json','mimeType':'application/json','buffer':json.dumps(sample).encode()})
  wait(page, 'document.querySelector("#map-file").value===""')
  ok('Valid Starter map recovers from blocked drawing',not page.evaluate('__sphere.state().loadBlocked') and page.locator('[data-node]').count()==12)
@@ -86,19 +90,19 @@ with sync_playwright() as p:
   q.locator('#view-list').click();q.locator('#search').fill('workflow')
   ok(f'{width}px searchable list works',q.locator('.list-item').count()==1)
   q.locator('.list-item').click()
-  ok(f'{width}px details available',q.locator('#details h2').inner_text()=='AI更新ルール')
+  ok(f'{width}px details available',q.locator('#details h2').inner_text()==('AI更新ルール' if LANG=='ja' else 'AI update rules'))
   q.locator('#view-map').click()
   q.locator('#open-settings').click();q.locator('#mode').select_option('dark');q.locator('[data-world="plain"]').click()
   ok(f'{width}px settings fit',q.locator('#settings').bounding_box()['width']<=width)
-  if width==375:q.screenshot(path=str(R/'preview/mobile-settings-375.png'),full_page=True)
+  if width==375:q.screenshot(path=str(OUT/'mobile-settings-375.png'),full_page=True)
   q.locator('#close-settings').click()
-  if width==375:q.screenshot(path=str(R/'preview/mobile-375.png'),full_page=True)
+  if width==375:q.screenshot(path=str(OUT/'mobile-375.png'),full_page=True)
   q.emulate_media(reduced_motion='reduce',forced_colors='active')
   ok(f'{width}px reduced-motion/forced-colors retains all nodes',q.locator('[data-node]').count()==12)
   q.close()
  ok('No uncaught browser JavaScript errors',not errors)
 
  browser.close()
-report={'method':'Chromium set_content of generated HTML; local fixture fetch mocked. No browser URL/file navigation tested. Real HTTP tested in Node suite.','browser':exe or 'Playwright Chromium','passed':len(checks),'failed':0,'errors':errors,'checks':checks}
-(R/'verification/browser-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+report={'method':'Chromium set_content of generated HTML; local fixture fetch mocked. No browser URL/file navigation tested. Real HTTP tested in Node suite.','language':LANG,'browser':Path(exe).name if exe else 'Playwright Chromium','passed':len(checks),'failed':0,'errors':errors,'checks':checks}
+(R/f'verification/browser-smoke-{LANG}.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print('Browser smoke:',len(checks),'passed, 0 failed')

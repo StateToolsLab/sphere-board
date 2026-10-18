@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src data: blob:; base-uri 'none'; form-action 'none'">
+<title>Sphere Board — A map for moving work forward</title>
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <div class="identity"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><ellipse cx="18" cy="18" rx="7" ry="14"/><path d="M4 18h28M8 9c8 5 12 5 20 0M8 27c8-5 12-5 20 0"/></svg><div><strong>SPHERE BOARD</strong><span>OPEN PLANS. YOUR WORLD.</span></div></div>
+  <div class="top-actions"><span class="version">0.6.0</span><button id="open-map" class="button primary">Open map.json</button><button id="open-settings" class="button settings-button" aria-haspopup="dialog"><span aria-hidden="true">⚙</span><span>Settings</span></button></div>
+</header>
+<main id="content">
+  <section class="intro">
+    <div><div class="eyebrow"><span class="tiny-orbit" aria-hidden="true"></span> YOUR SHARED PLAN MAP</div><h1 id="project-title">Sphere Board</h1><p id="project-desc">Keep the structure. Choose the look. Load a map.json to begin.</p></div>
+    <div class="connection"><span id="connection-label">Built-in demo · disconnected</span><span id="revision-label">revision 0</span></div>
+  </section>
+  <div class="notice" id="notice" role="status" aria-live="polite" hidden></div>
+  <div id="projection-note" class="projection-note" hidden></div>
+  <section class="workspace" aria-label="Work progress map">
+    <div class="map-column">
+      <div class="map-toolbar">
+        <div class="view-tabs" role="group" aria-label="View format"><button id="view-map" class="tab active" aria-pressed="true">Sphere Board</button><button id="view-list" class="tab" aria-pressed="false">List</button></div>
+        <div class="map-summary" id="map-summary"></div>
+        <span class="skin-label" id="skin-label">Core Plain</span>
+      </div>
+      <div class="focus-toolbar"><strong id="current-count">Current positions 0</strong><span id="ready-count">Ready work 0</span><span id="current-position" class="current-position">Current position —/0</span><button id="go-current" class="button small">Go to current</button></div>
+      <div id="region-key" class="region-key" aria-label="Stage order, from inner to outer bands"></div>
+      <div id="focus-description" class="focus-description" role="status"></div>
+      <div class="readonly-note" id="readonly-note">This board is read-only. Make changes in the source ledger (or map.json).</div>
+      <div id="board-wrap" class="board-wrap">
+        <div class="board-scroll" id="board-scroll" tabindex="0" aria-label="Map. Tab into the board, use arrow keys to move between nearby nodes, Enter to select, and Esc to clear selection. Drag or pinch to navigate.">
+          <svg id="board" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Sphere Board. Select a node to show its details."></svg>
+        </div>
+        <div class="board-foot"><span id="board-help">Select a node for details · coordinates stay fixed</span><div class="zoom-controls"><button id="zoom-out" class="icon-button" aria-label="Zoom out">−</button><span id="zoom-label">100%</span><button id="zoom-in" class="icon-button" aria-label="Zoom in">＋</button><button id="zoom-fit" class="button small">Overview</button><button id="zoom-read" class="button small">Initial view</button></div></div>
+      </div>
+      <div id="list-wrap" class="list-wrap" hidden><label class="search-label">Search nodes<input id="search" type="search" placeholder="Name, ID, or owner" autocomplete="off"></label><div id="node-list"></div></div>
+      <div class="legend" aria-label="Semantic legend"><span>◎ Current position</span><span>⊹ Ready work</span><span>◇ Gate</span><span>━ Parent–child</span><span>Stage and phase membership is shown by regions</span><span>━▶ Prerequisite → successor</span><span>··▷ Origin</span><span>↩ Return destination</span><span>┄⊣ Blocker</span></div>
+      <div id="lane-legend" class="lane-legend" aria-label="Lanes (colors follow lane order and do not indicate state)"></div>
+      <details class="state-legend"><summary>Work-state shapes and gate results · color indicates lanes</summary><div id="state-legend"></div></details>
+    </div>
+    <aside id="detail-panel" class="detail-panel" aria-label="Node details and current positions">
+      <div class="panel-heading"><span id="panel-eyebrow">CURRENT POSITIONS</span><button id="clear-selection" class="icon-button" aria-label="Clear selection" hidden>×</button></div>
+      <div id="details"></div>
+    </aside>
+  </section>
+  <section id="problems" class="problems" aria-label="Input issues to review" role="status" hidden></section>
+  <footer class="page-footer"><span>Plans in data. Worlds in skins.</span><span id="integrity">READ-ONLY VIEWER · LOCAL FIRST</span></footer>
+</main>
+<dialog id="settings" class="drawer" aria-labelledby="settings-title">
+  <div class="drawer-header"><div><span class="eyebrow">MAKE IT YOURS</span><h2 id="settings-title">Display and skins</h2></div><button id="close-settings" class="icon-button" aria-label="Close Settings">×</button></div>
+  <div class="drawer-body">
+    <section class="setting-section"><h3>World theme</h3><p>Change the look while preserving the meaning.</p><div id="theme-grid" class="theme-grid"></div></section>
+    <section class="setting-section"><h3>Brand layer</h3><label class="field-label">Organization accent<select id="brand"><option value="none">None / Core</option><option value="example-studio">Example Studio (fictional)</option></select></label><p class="small-note">Example Studio is a fictional organization. Its colors are a sample for trying the theme system.</p></section>
+    <section class="setting-section"><h3>Appearance</h3><div class="two-fields"><label class="field-label">Color mode<select id="mode"><option value="light">Light</option><option value="dark">Dark</option></select></label><label class="field-label">Contrast<select id="contrast"><option value="normal">Standard</option><option value="high">High contrast</option></select></label></div><p class="small-note">Colors are adjusted when needed to keep text and lines legible. No motion is used.</p></section>
+    <section class="setting-section"><h3>Your own skin</h3><div class="button-row"><button id="import-theme" class="button">Import theme.json</button><button id="export-theme" class="button">Export World</button></div><p class="small-note" id="custom-theme-note">JSON only. CSS, JavaScript, and external images are not accepted.</p></section>
+    <details class="setting-section lab"><summary>Theme Lab <span>For testing and development</span></summary><label class="field-label">Board preview width<select id="viewport"><option value="auto">Fit to screen</option><option value="375">375 px</option><option value="768">768 px</option></select></label><h4>Resolved tokens / validation results</h4><pre id="diagnostics"></pre></details>
+    <details class="setting-section lab"><summary>Data and connection <span>map.json</span></summary><label class="check"><input type="checkbox" id="auto-reload" checked> Poll the local server for map updates</label><p class="small-note">Manually opened files show a snapshot from the time of loading. Only sphere-starter/0.3 map.json files are supported. The viewer does not save over files or launch AI automatically.</p><div class="button-row"><button id="reload" class="button">Reload from server</button><button id="export-map" class="button">Export map</button><button id="load-demo" class="button">Reset to built-in demo</button></div><pre id="data-diagnostics"></pre></details>
+  </div>
+</dialog>
+<input id="map-file" class="file-input" type="file" accept=".json,application/json" aria-label="Map JSON file">
+<input id="theme-file" class="file-input" type="file" accept=".json,application/json" aria-label="Theme JSON file">
+<noscript><div class="boot-error">JavaScript is required to use this viewer. You can also read map.json in a text editor.</div></noscript>
+<script>/*__STATES__*/</script>
+<script>/*__STATE_TEXT__*/</script>
+<script>/*__CORE__*/</script>
+<script>/*__LAYOUT__*/</script>
+<script>/*__CAMERA__*/</script>
+<script>const SPHERE_BUNDLE = /*__BUNDLE__*/;</script>
+<script>/*__APP__*/</script>
+</body></html>

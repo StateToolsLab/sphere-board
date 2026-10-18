@@ -1,7 +1,9 @@
-# Examples
+# Fictional examples
 
-- `essay.json`: fictional essay project, valid `sphere-starter/0.3`.
-- `exhibition.json`: fictional exhibition project, valid `sphere-starter/0.3`.
-- `sample-map.json`: compact directly managed Starter sample used by CLI/data-rule tests.
+Every example is fictional; it is not evidence of real work or approval.
 
-All people, approvals, evidence, project names, and progress facts in these files are fictional examples.
+- `essay.json`: plan to publish an essay; the English built-in demo.
+- `exhibition.json`: small exhibition, including all work states and gate outcomes.
+- `sample-map.json`: display, schema, and workflow test fixture.
+
+Japanese originals are under `ja/`, with the same filenames. Their IDs, node order, relations, states, readiness, ownership, and geometry match their English counterparts. Lane names and source annotations are translated as display data. The root `map.json` matches English `essay.json`; `ja/map.json` matches Japanese `essay.json`.

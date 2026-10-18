@@ -1,6 +1,6 @@
 # Sphere Board
 
-**v0.5.1**
+**v0.6.0**
 
 Sphere Board renders a `map.json` ledger or plan as a read-only **Sphere Board**. It does not edit planning facts in the board. The bundled viewer reads the `sphere-starter/0.3` map shape, lays it out, and lets you inspect nodes, current positions, readiness, relations, gates, lanes, and themes.
 
@@ -14,7 +14,7 @@ Sphere Board is made by StateToolsLab with AI assistance. Design discussion, imp
 
 ## Run it
 
-The built `index.html` is self-contained. You can open it directly in a browser and use **Open map.json** to choose a local Starter map.
+The built viewers are self-contained: open `index.html` for English or `ja/index.html` for Japanese. Use **Open map.json** (Japanese: **map.json を開く**) to choose a local Starter map. Each viewer includes a fictional example in its own language. There is no in-page language switch; either viewer accepts maps in either language.
 
 For local serving and automatic reload, use Node.js 22 or newer:
 
@@ -22,7 +22,7 @@ For local serving and automatic reload, use Node.js 22 or newer:
 node tools/sphere.mjs serve --map examples/essay.json --port 8787
 ```
 
-Then open the local URL printed by the command. No npm install, CDN, API key, or runtime package dependency is required. `package.json` remains `private: true`; this repository is not prepared for package-registry publishing.
+Then open `http://127.0.0.1:8787/` for English or `http://127.0.0.1:8787/ja/` for Japanese. Both show the selected `--map` file; to show Japanese sample data, use `--map examples/ja/essay.json`. In projects created with `init`, run `.sphere/sphere.mjs serve` and use the same URL paths. No npm install, CDN, API key, or runtime package dependency is required. `package.json` remains `private: true`; this repository is not prepared for package-registry publishing.
 
 ## Write a map.json
 
@@ -36,7 +36,7 @@ The board is a viewer. Hover, selection, Esc, empty-space clearing, pan, zoom, l
 
 ## Paper
 
-A short paper explaining the ideas behind Sphere Board is in [`docs/paper/`](docs/paper/) (English and Japanese, version 1.0, 2026-10-17; CC BY 4.0).
+A short paper explaining the ideas behind Sphere Board is in [`docs/paper/`](docs/paper/) (English and Japanese, version 1.1, revised 2026-10-18; first edition 1.0: 2026-10-17; CC BY 4.0).
 
 ## Build and test
 
@@ -49,7 +49,9 @@ node tools/verify-release.mjs
 
 Development browser checks use Python, Playwright, and Chromium when available. They are not runtime dependencies of the viewer.
 
-Version 0.5.1 was checked with Node.js, Python, Playwright, and Chromium on Linux. The exact built HTML bytes were rendered and exercised in Chromium, and the Node test suite exercised the real local HTTP server at the protocol level. This verification environment blocks Chromium navigation to both `file://` and localhost URLs by policy, so end-to-end browser navigation through those URLs remains unverified here. Separately, StateToolsLab opened v0.5.0 in desktop Chrome through the local server, and the built-in sample of v0.4.0 in iOS Safari and Android Chrome. Firefox, public hosting configurations, and package-registry publishing have not been verified.
+Version 0.6.0 was checked on Linux with Node.js 24, Python 3.12, Playwright 1.57, and Chromium 153. The complete existing Node suite passes, with additional bilingual checks. Both generated viewers passed the smoke, layout, and finish browser suites, plus real `file:` and loopback HTTP navigation. The paper, licenses, historical screenshots, geometry, and schemas are preserved. Results and scope are in [verification/TEST_REPORT.md](verification/TEST_REPORT.md); current captures are in [preview/v0.6.0/](preview/v0.6.0/). Firefox, Safari, mobile hardware, and public hosting were not tested for this version.
+
+English terminology and translation choices are documented in [docs/viewer-terminology.md](docs/viewer-terminology.md). For the static source composition and single shared controller, see [docs/architecture.md](docs/architecture.md).
 
 ## License
 

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use Sphere Board, please cite it as below."
+type: software
+title: "Sphere Board"
+abstract: "A read-only project map of stage bands and boundary gates."
+authors:
+  - family-names: "Deguchi"
+    given-names: "Kiyoshi"
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-5850-9262"
+version: "0.6.0"
+license: MIT
+repository-code: "https://github.com/StateToolsLab/sphere-board"
+keywords:
+  - project-management
+  - visualization
+  - roadmap
+  - read-only
+preferred-citation:
+  type: article
+  title: "Sphere Board: A Read-Only Project Map of Stage Bands and Boundary Gates"
+  authors:
+    - family-names: "Deguchi"
+      given-names: "Kiyoshi"
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0000-5850-9262"
+  year: 2026
+  notes: "Short paper, version 1.1, in docs/paper/ (CC BY 4.0)."
+  url: "https://github.com/StateToolsLab/sphere-board/tree/main/docs/paper"

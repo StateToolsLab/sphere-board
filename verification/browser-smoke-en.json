@@ -1,0 +1,162 @@
+{
+  "method": "Chromium set_content of generated HTML; local fixture fetch mocked. No browser URL/file navigation tested. Real HTTP tested in Node suite.",
+  "language": "en",
+  "browser": "chromium",
+  "passed": 38,
+  "failed": 0,
+  "errors": [],
+  "checks": [
+    {
+      "name": "Initial board has 12 nodes and settings are closed",
+      "passed": true
+    },
+    {
+      "name": "Initial semantic snapshot equals fixture",
+      "passed": true
+    },
+    {
+      "name": "Keyboard selects node independently of 3 currents",
+      "passed": true
+    },
+    {
+      "name": "Theme Lab initially folded",
+      "passed": true
+    },
+    {
+      "name": "Unchanged semantics plain/light/none",
+      "passed": true
+    },
+    {
+      "name": "Unchanged semantics plain/light/example-studio",
+      "passed": true
+    },
+    {
+      "name": "Unchanged semantics plain/dark/none",
+      "passed": true
+    },
+    {
+      "name": "Unchanged semantics plain/dark/example-studio",
+      "passed": true
+    },
+    {
+      "name": "Escape closes dialog and focus returns",
+      "passed": true
+    },
+    {
+      "name": "User theme upload preserves map",
+      "passed": true
+    },
+    {
+      "name": "Semantic slot injection rejected and old theme retained",
+      "passed": true
+    },
+    {
+      "name": "Polling reads a valid updated revision and keeps selection",
+      "passed": true
+    },
+    {
+      "name": "Invalid reload keeps last valid map",
+      "passed": true
+    },
+    {
+      "name": "Recovery clears stale error",
+      "passed": true
+    },
+    {
+      "name": "HTML-like labels render as text, not elements",
+      "passed": true
+    },
+    {
+      "name": "Unsupported input stops drawing with a clear Starter-only message",
+      "passed": true
+    },
+    {
+      "name": "Valid Starter map recovers from blocked drawing",
+      "passed": true
+    },
+    {
+      "name": "320px body does not horizontally overflow",
+      "passed": true
+    },
+    {
+      "name": "320px searchable list works",
+      "passed": true
+    },
+    {
+      "name": "320px details available",
+      "passed": true
+    },
+    {
+      "name": "320px settings fit",
+      "passed": true
+    },
+    {
+      "name": "320px reduced-motion/forced-colors retains all nodes",
+      "passed": true
+    },
+    {
+      "name": "375px body does not horizontally overflow",
+      "passed": true
+    },
+    {
+      "name": "375px searchable list works",
+      "passed": true
+    },
+    {
+      "name": "375px details available",
+      "passed": true
+    },
+    {
+      "name": "375px settings fit",
+      "passed": true
+    },
+    {
+      "name": "375px reduced-motion/forced-colors retains all nodes",
+      "passed": true
+    },
+    {
+      "name": "768px body does not horizontally overflow",
+      "passed": true
+    },
+    {
+      "name": "768px searchable list works",
+      "passed": true
+    },
+    {
+      "name": "768px details available",
+      "passed": true
+    },
+    {
+      "name": "768px settings fit",
+      "passed": true
+    },
+    {
+      "name": "768px reduced-motion/forced-colors retains all nodes",
+      "passed": true
+    },
+    {
+      "name": "1280px body does not horizontally overflow",
+      "passed": true
+    },
+    {
+      "name": "1280px searchable list works",
+      "passed": true
+    },
+    {
+      "name": "1280px details available",
+      "passed": true
+    },
+    {
+      "name": "1280px settings fit",
+      "passed": true
+    },
+    {
+      "name": "1280px reduced-motion/forced-colors retains all nodes",
+      "passed": true
+    },
+    {
+      "name": "No uncaught browser JavaScript errors",
+      "passed": true
+    }
+  ]
+}

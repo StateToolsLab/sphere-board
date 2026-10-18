@@ -1,8 +1,18 @@
 # Changelog
 
-## Unreleased
+## 0.6.0 — English-first viewer
 
-- The README (English and Japanese) now opens with Figure 1 of the short paper (`docs/paper/figure-1.svg`) instead of the v0.5.0 screenshots. The screenshots stay under `preview/v0.5.0/`. Documentation only; no code changes.
+- Made `index.html` English and added a standalone Japanese viewer at `ja/index.html`.
+- Kept one shared renderer/controller, core, layout, camera, CSS, and all 21 state/result geometries; presentation sources and state descriptions are separated by language with no runtime language switching or translation dictionary.
+- Added matching fictional English/Japanese examples, default maps, and English theme metadata.
+- Extended the read-only CLI server and portable init output to both viewer paths.
+- Added bilingual build, vocabulary, geometry, UI/ARIA, file URL, HTTP, and interaction verification, with both-language screenshots.
+- Regenerated the file list and checksums; preserved licenses, schemas, and v0.5.0 screenshots.
+- Updated the short paper in `docs/paper/` to version 1.1 (revised 2026-10-18; states may be shown by shapes and marks, or by color; the reference implementation still uses shapes). Version 1.0 remains unchanged in the v0.5.1 release. Figure 1 and the CC BY 4.0 license are unchanged.
+- Added `CITATION.cff` (author Kiyoshi Deguchi, ORCID; copyright holder StateToolsLab).
+- Kept eight representative screenshots under `preview/v0.6.0/` (essay, English/Japanese, light/dark, desktop/375px); the other browser-test captures are regenerated locally by the tests.
+
+- The README (English and Japanese) now opens with Figure 1 of the short paper (`docs/paper/figure-1.svg`) instead of the v0.5.0 screenshots. The screenshots stay under `preview/v0.5.0/`. This README image change predates the viewer changes in this release.
 
 ## 0.5.1 — Sphere Board
 

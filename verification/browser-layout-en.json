@@ -1,108 +1,109 @@
 {
   "method": "Chromium generated index.html via set_content; explicit same-map fetch fixtures; no real browser URL/file transport.",
-  "browser": "/usr/bin/chromium",
+  "language": "en",
+  "browser": "chromium",
   "passed": 250,
   "failed": 0,
   "errors": [],
   "networkRequests": [],
   "screenshots": [
-    "preview/layout/essay-desktop-initial.png",
-    "preview/layout/essay-desktop-overview.png",
-    "preview/layout/essay-375-initial.png",
-    "preview/layout/essay-375-overview.png",
-    "preview/layout/essay-375-bottom-sheet.png",
-    "preview/layout/exhibition-desktop-initial.png",
-    "preview/layout/exhibition-desktop-overview.png",
-    "preview/layout/exhibition-375-initial.png",
-    "preview/layout/exhibition-375-overview.png",
-    "preview/layout/scale-10-desktop-initial.png",
-    "preview/layout/scale-10-desktop-overview.png",
-    "preview/layout/scale-10-375-initial.png",
-    "preview/layout/scale-10-375-overview.png",
-    "preview/layout/scale-60-desktop-initial.png",
-    "preview/layout/scale-60-desktop-overview.png",
-    "preview/layout/scale-60-375-initial.png",
-    "preview/layout/scale-60-375-overview.png",
-    "preview/layout/scale-150-desktop-initial.png",
-    "preview/layout/scale-150-desktop-overview.png",
-    "preview/layout/scale-150-375-initial.png",
-    "preview/layout/scale-150-375-overview.png",
-    "preview/layout/scale-300-desktop-initial.png",
-    "preview/layout/scale-300-desktop-overview.png",
-    "preview/layout/scale-300-375-initial.png",
-    "preview/layout/scale-300-375-overview.png"
+    "preview/v0.6.0/en/layout/essay-desktop-initial.png",
+    "preview/v0.6.0/en/layout/essay-desktop-overview.png",
+    "preview/v0.6.0/en/layout/essay-375-initial.png",
+    "preview/v0.6.0/en/layout/essay-375-overview.png",
+    "preview/v0.6.0/en/layout/essay-375-bottom-sheet.png",
+    "preview/v0.6.0/en/layout/exhibition-desktop-initial.png",
+    "preview/v0.6.0/en/layout/exhibition-desktop-overview.png",
+    "preview/v0.6.0/en/layout/exhibition-375-initial.png",
+    "preview/v0.6.0/en/layout/exhibition-375-overview.png",
+    "preview/v0.6.0/en/layout/scale-10-desktop-initial.png",
+    "preview/v0.6.0/en/layout/scale-10-desktop-overview.png",
+    "preview/v0.6.0/en/layout/scale-10-375-initial.png",
+    "preview/v0.6.0/en/layout/scale-10-375-overview.png",
+    "preview/v0.6.0/en/layout/scale-60-desktop-initial.png",
+    "preview/v0.6.0/en/layout/scale-60-desktop-overview.png",
+    "preview/v0.6.0/en/layout/scale-60-375-initial.png",
+    "preview/v0.6.0/en/layout/scale-60-375-overview.png",
+    "preview/v0.6.0/en/layout/scale-150-desktop-initial.png",
+    "preview/v0.6.0/en/layout/scale-150-desktop-overview.png",
+    "preview/v0.6.0/en/layout/scale-150-375-initial.png",
+    "preview/v0.6.0/en/layout/scale-150-375-overview.png",
+    "preview/v0.6.0/en/layout/scale-300-desktop-initial.png",
+    "preview/v0.6.0/en/layout/scale-300-desktop-overview.png",
+    "preview/v0.6.0/en/layout/scale-300-375-initial.png",
+    "preview/v0.6.0/en/layout/scale-300-375-overview.png"
   ],
   "metrics": [
     {
       "fixture": "essay",
       "viewportWidth": 1440,
-      "bootMs": 550.9,
+      "bootMs": 269.91,
       "initialScale": 1.5
     },
     {
       "fixture": "essay",
       "viewportWidth": 375,
-      "bootMs": 292.95,
+      "bootMs": 258.77,
       "initialScale": 1.5
     },
     {
       "fixture": "exhibition",
       "viewportWidth": 1440,
-      "bootMs": 354.17,
+      "bootMs": 307.44,
       "initialScale": 1.5
     },
     {
       "fixture": "exhibition",
       "viewportWidth": 375,
-      "bootMs": 376.34,
+      "bootMs": 268.12,
       "initialScale": 1.5
     },
     {
       "fixture": "scale-10",
       "viewportWidth": 1440,
-      "bootMs": 282.84,
+      "bootMs": 283.3,
       "initialScale": 1.386888590812043
     },
     {
       "fixture": "scale-10",
       "viewportWidth": 375,
-      "bootMs": 250.64,
+      "bootMs": 323.78,
       "initialScale": 1.5
     },
     {
       "fixture": "scale-60",
       "viewportWidth": 1440,
-      "bootMs": 424.65,
+      "bootMs": 501.14,
       "initialScale": 2.9094190129634727
     },
     {
       "fixture": "scale-60",
       "viewportWidth": 375,
-      "bootMs": 410.25,
+      "bootMs": 426.51,
       "initialScale": 2.9094190129634727
     },
     {
       "fixture": "scale-150",
       "viewportWidth": 1440,
-      "bootMs": 518.49,
+      "bootMs": 348.06,
       "initialScale": 2.9094190129634727
     },
     {
       "fixture": "scale-150",
       "viewportWidth": 375,
-      "bootMs": 496.97,
+      "bootMs": 369.02,
       "initialScale": 2.9094190129634727
     },
     {
       "fixture": "scale-300",
       "viewportWidth": 1440,
-      "bootMs": 805.34,
+      "bootMs": 468.48,
       "initialScale": 4.782082532813071
     },
     {
       "fixture": "scale-300",
       "viewportWidth": 375,
-      "bootMs": 669.74,
+      "bootMs": 523.64,
       "initialScale": 4.782082532813071
     }
   ],

@@ -32,6 +32,7 @@ function help(){console.log(`Sphere Board starter 0.3.0 — local, dependency-fr
 
 node tools/sphere.mjs init <project-directory>
 node tools/sphere.mjs serve [--map map.json] [--port 4173]
+  Open / for English or /ja/ for Japanese; both read the selected map.
 node tools/sphere.mjs validate [map.json] [--theme]
 node tools/sphere.mjs snapshot [map.json] --out base.snapshot.json
 node tools/sphere.mjs hash [map.json]
@@ -56,6 +57,8 @@ function initProject(dir) {
     const template=path.join(root,'templates/project/.sphere');
     for(const name of ['map.json','WORKFLOW.md','README.md','package.json'])fs.copyFileSync(path.join(template,name),path.join(staging,name));
     fs.copyFileSync(path.join(root,'index.html'),path.join(staging,'index.html'));
+    fs.mkdirSync(path.join(staging,'ja'));
+    fs.copyFileSync(path.join(root,'ja/index.html'),path.join(staging,'ja/index.html')); 
     for(const name of ['core.js','states.js'])fs.copyFileSync(path.join(root,'app',name),path.join(staging,name));
     for(const name of ['starter-map.schema.json','theme.schema.json'])fs.copyFileSync(path.join(root,'spec',name),path.join(staging,name));
     fs.copyFileSync(path.join(root,'tools/sphere.mjs'),path.join(staging,'sphere.mjs'));
@@ -104,7 +107,7 @@ function apply(candidatePath,flags) {
 }
 function serve(flags) {
   only(flags,['map','port']);
-  const mapFile=path.resolve(flags.map||defaultMap()),htmlFile=path.join(root,'index.html');
+  const mapFile=path.resolve(flags.map||defaultMap()),htmlFile=path.join(root,'index.html'),jaHtmlFile=path.join(root,'ja/index.html');
   checked(mapFile);assert(fs.existsSync(htmlFile),'index.html missing. Run the build command.');
   const port=Number(flags.port||4173);assert(Number.isInteger(port)&&port>=1024&&port<=65535,'Port must be 1024–65535.');
   const hosts=new Set(['127.0.0.1:'+port,'localhost:'+port]),origins=new Set([...hosts].map(x=>'http://'+x));
@@ -116,20 +119,20 @@ function serve(flags) {
     if(!['GET','HEAD'].includes(req.method))return fail(405,'Read-only server');
     let pathname;try{pathname=new URL(req.url,'http://127.0.0.1:'+port).pathname;}catch(_){return fail(400,'Bad request');}
     if(pathname==='/favicon.ico'){res.writeHead(204);res.end();return;}
-    const file=pathname==='/'||pathname==='/index.html'?htmlFile:pathname==='/map.json'?mapFile:null;
+    const file=pathname==='/'||pathname==='/index.html'?htmlFile:['/ja/','/ja/index.html'].includes(pathname)?jaHtmlFile:['/map.json','/ja/map.json'].includes(pathname)?mapFile:null;
     if(!file)return fail(404,'Not found');
     try {
       let data;
       if(file===mapFile){const q=checked(mapFile);data=Buffer.from(q.text);}
       else data=fs.readFileSync(file);
-      res.writeHead(200,{'Content-Type':file===htmlFile?'text/html;charset=utf-8':'application/json;charset=utf-8','Content-Length':data.length});res.end(req.method==='HEAD'?undefined:data);
+      res.writeHead(200,{'Content-Type':file!==mapFile?'text/html;charset=utf-8':'application/json;charset=utf-8','Content-Length':data.length});res.end(req.method==='HEAD'?undefined:data);
     }catch(e){
       if(file===mapFile){const body=JSON.stringify({error:'Map load stopped; do not draw this map.',problems:e.problems||[e.message]});res.writeHead(422,{'Content-Type':'application/json;charset=utf-8','Content-Length':Buffer.byteLength(body)});res.end(req.method==='HEAD'?undefined:body);}
       else fail(503,'File temporarily unavailable');
     }
   });
   server.on('error',e=>{console.error('Server error: '+e.message);process.exitCode=1;});
-  server.listen(port,'127.0.0.1',()=>console.log(`Sphere Board: http://127.0.0.1:${port}\nRead-only map: ${mapFile}\nOnly index.html and this map are exposed. Stop with Ctrl+C.`));
+  server.listen(port,'127.0.0.1',()=>console.log(`Sphere Board: http://127.0.0.1:${port}\nRead-only map: ${mapFile}\nJapanese viewer: http://127.0.0.1:${port}/ja/\nOnly the English/Japanese viewers and this map are exposed. Stop with Ctrl+C.`));
 }
 try {
   const [command,...args]=process.argv.slice(2),{positional:p,flags:f}=parseArgs(args);

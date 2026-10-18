@@ -2,47 +2,47 @@
   "profile": "sphere-starter/0.3",
   "meta": {
     "id": "example-expo",
-    "title": "小さな展示会を開く（架空）"
+    "title": "Organize a small exhibition (fictional)"
   },
   "revision": 0,
   "updatedAt": null,
   "updatedBy": null,
   "lastChange": "",
   "lanes": [
-    "進行係A（架空）",
-    "制作係B（架空）",
-    "調査係C（架空）",
-    "判断係D（架空）",
-    "ゲート"
+    "Coordinator A (fictional)",
+    "Creator B (fictional)",
+    "Researcher C (fictional)",
+    "Decision maker D (fictional)",
+    "Gates"
   ],
   "problems": [
-    "P1 02-07-00: 状態の語「保留」は規約の語彙に無い（架空のサンプルで、わざと入れた）",
-    "P1 02-07-00: unmapped status \"保留\" -> unknown"
+    "P1 02-07-00: status \"on hold\" is outside the accepted vocabulary (deliberate in this fictional example)",
+    "P1 02-07-00: unmapped status \"on hold\" -> unknown"
   ],
   "actors": [
     {
       "id": "owner-1",
-      "label": "進行係A（架空）",
+      "label": "Coordinator A (fictional)",
       "kind": "unknown"
     },
     {
       "id": "owner-2",
-      "label": "判断係D（架空）",
+      "label": "Decision maker D (fictional)",
       "kind": "unknown"
     },
     {
       "id": "owner-3",
-      "label": "制作係B（架空）",
+      "label": "Creator B (fictional)",
       "kind": "unknown"
     },
     {
       "id": "owner-4",
-      "label": "調査係C（架空）",
+      "label": "Researcher C (fictional)",
       "kind": "unknown"
     },
     {
       "id": "fictional-reviewer",
-      "label": "確認係E（架空）",
+      "label": "Reviewer E (fictional)",
       "kind": "human"
     }
   ],
@@ -55,7 +55,7 @@
       "id": "example-expo",
       "order": 0,
       "kind": "project",
-      "label": "小さな展示会を開く（架空）",
+      "label": "Organize a small exhibition (fictional)",
       "lane": "",
       "owner": null,
       "state": "none",
@@ -79,7 +79,7 @@
       "id": "P1 01",
       "order": 2,
       "kind": "group",
-      "label": "準備",
+      "label": "Preparation",
       "lane": "",
       "owner": null,
       "state": "returned",
@@ -90,7 +90,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -98,7 +98,7 @@
       "id": "P1 02",
       "order": 3,
       "kind": "group",
-      "label": "設営",
+      "label": "Installation",
       "lane": "",
       "owner": null,
       "state": "in_progress",
@@ -110,7 +110,7 @@
       "id": "P1 03",
       "order": 4,
       "kind": "group",
-      "label": "会期",
+      "label": "Exhibition period",
       "lane": "",
       "owner": null,
       "state": "scheduled",
@@ -122,8 +122,8 @@
       "id": "P1 01-00-00",
       "order": 5,
       "kind": "management",
-      "label": "管制（準備）",
-      "lane": "進行係A（架空）",
+      "label": "Coordinate preparation",
+      "lane": "Coordinator A (fictional)",
       "owner": "owner-1",
       "state": "handed_over",
       "ready": false,
@@ -133,7 +133,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -141,8 +141,8 @@
       "id": "P1 01-01-00",
       "order": 6,
       "kind": "task",
-      "label": "会場を決める",
-      "lane": "判断係D（架空）",
+      "label": "Choose a venue",
+      "lane": "Decision maker D (fictional)",
       "owner": "owner-2",
       "state": "returned",
       "ready": false,
@@ -152,7 +152,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -160,8 +160,8 @@
       "id": "P1 01-02-00",
       "order": 7,
       "kind": "task",
-      "label": "出展の作品を選ぶ",
-      "lane": "制作係B（架空）",
+      "label": "Select works to exhibit",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "returned",
       "ready": false,
@@ -171,7 +171,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -179,8 +179,8 @@
       "id": "P1 01-02-01",
       "order": 8,
       "kind": "task",
-      "label": "候補を広く集める",
-      "lane": "調査係C（架空）",
+      "label": "Gather a broad range of candidates",
+      "lane": "Researcher C (fictional)",
       "owner": "owner-4",
       "state": "returned",
       "ready": false,
@@ -190,7 +190,7 @@
         {
           "kind": "artifact",
           "reference": "fictional-example-record",
-          "summary": "公開サンプル用の架空の記録です。"
+          "summary": "Fictional record for a public example."
         }
       ]
     },
@@ -198,8 +198,8 @@
       "id": "P1 01-02-02",
       "order": 9,
       "kind": "task",
-      "label": "別の選び方を試す",
-      "lane": "制作係B（架空）",
+      "label": "Try an alternative selection method",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "record_only",
       "ready": false,
@@ -210,21 +210,21 @@
       "id": "P1 01-03-00",
       "order": 10,
       "kind": "task",
-      "label": "チラシを外注する",
-      "lane": "判断係D（架空）",
+      "label": "Outsource the flyer",
+      "lane": "Decision maker D (fictional)",
       "owner": "owner-2",
       "state": "cancelled",
       "ready": false,
       "derived": false,
       "planned": false,
-      "reason": "公開サンプル用の架空の中止理由です。"
+      "reason": "Fictional reason for cancellation in a public example."
     },
     {
       "id": "P1 01-04-00",
       "order": 11,
       "kind": "task",
-      "label": "記念品を作る",
-      "lane": "制作係B（架空）",
+      "label": "Create souvenirs",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "discarded",
       "ready": false,
@@ -235,8 +235,8 @@
       "id": "P1 01-05-00",
       "order": 12,
       "kind": "task",
-      "label": "近所の行事の手伝い",
-      "lane": "判断係D（架空）",
+      "label": "Help with a neighborhood event",
+      "lane": "Decision maker D (fictional)",
       "owner": "owner-2",
       "state": "out_of_scope",
       "ready": false,
@@ -247,8 +247,8 @@
       "id": "P1 01-06-00",
       "order": 13,
       "kind": "task",
-      "label": "展示の記録を本にする",
-      "lane": "制作係B（架空）",
+      "label": "Make a book documenting the exhibition",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "off_mainline",
       "ready": false,
@@ -260,8 +260,8 @@
       "order": 14,
       "gateKind": "explicit",
       "kind": "gate",
-      "label": "準備の確定",
-      "lane": "ゲート",
+      "label": "Approve preparation",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "sent_back",
       "ready": false,
@@ -273,8 +273,8 @@
       "order": 15,
       "gateKind": "recheck",
       "kind": "gate",
-      "label": "準備の確定（再判定）",
-      "lane": "ゲート",
+      "label": "Approve preparation (recheck)",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "passed_with_defects",
       "ready": false,
@@ -283,15 +283,15 @@
       "approval": {
         "actorId": "fictional-reviewer",
         "recordedAt": "2026-01-01T00:00:00Z",
-        "evidence": "公開サンプル用の架空の承認記録。"
+        "evidence": "Fictional approval record for a public example."
       }
     },
     {
       "id": "P1 02-00-00",
       "order": 16,
       "kind": "management",
-      "label": "管制（設営）",
-      "lane": "進行係A（架空）",
+      "label": "Coordinate installation",
+      "lane": "Coordinator A (fictional)",
       "owner": "owner-1",
       "state": "in_progress",
       "ready": false,
@@ -302,8 +302,8 @@
       "id": "P1 02-01-00",
       "order": 17,
       "kind": "task",
-      "label": "展示台を組む",
-      "lane": "制作係B（架空）",
+      "label": "Assemble display stands",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "in_progress",
       "ready": false,
@@ -314,8 +314,8 @@
       "id": "P1 02-01-01",
       "order": 18,
       "kind": "task",
-      "label": "ねじの規格を調べる",
-      "lane": "調査係C（架空）",
+      "label": "Check screw specifications",
+      "lane": "Researcher C (fictional)",
       "owner": "owner-4",
       "state": "in_progress",
       "ready": false,
@@ -326,8 +326,8 @@
       "id": "P1 02-02-00",
       "order": 19,
       "kind": "task",
-      "label": "照明を借りる",
-      "lane": "判断係D（架空）",
+      "label": "Borrow lighting",
+      "lane": "Decision maker D (fictional)",
       "owner": "owner-2",
       "state": "frozen",
       "ready": false,
@@ -338,8 +338,8 @@
       "id": "P1 02-03-00",
       "order": 20,
       "kind": "task",
-      "label": "案内板を作る",
-      "lane": "制作係B（架空）",
+      "label": "Make direction signs",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "carried_over",
       "ready": false,
@@ -350,8 +350,8 @@
       "id": "P1 02-04-00",
       "order": 21,
       "kind": "task",
-      "label": "名札を作る",
-      "lane": "制作係B（架空）",
+      "label": "Make name tags",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "spanning",
       "ready": false,
@@ -362,21 +362,21 @@
       "id": "P1 02-05-00",
       "order": 22,
       "kind": "task",
-      "label": "受付の手順を書く",
-      "lane": "制作係B（架空）",
+      "label": "Write reception procedures",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "not_started",
       "ready": true,
       "derived": false,
       "planned": false,
-      "readyReason": "公開サンプル上の前提が満たされているため。"
+      "readyReason": "The prerequisites in this fictional example have been met."
     },
     {
       "id": "P1 02-06-00",
       "order": 23,
       "kind": "task",
-      "label": "掲示の文を書く",
-      "lane": "制作係B（架空）",
+      "label": "Write notice text",
+      "lane": "Creator B (fictional)",
       "owner": "owner-3",
       "state": "not_started",
       "ready": false,
@@ -387,8 +387,8 @@
       "id": "P1 02-07-00",
       "order": 24,
       "kind": "task",
-      "label": "片付けの段取り",
-      "lane": "判断係D（架空）",
+      "label": "Plan the cleanup",
+      "lane": "Decision maker D (fictional)",
       "owner": "owner-2",
       "state": "unknown",
       "ready": false,
@@ -400,8 +400,8 @@
       "order": 25,
       "gateKind": "explicit",
       "kind": "gate",
-      "label": "設営の確定",
-      "lane": "ゲート",
+      "label": "Approve installation",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "pending",
       "ready": false,
@@ -413,8 +413,8 @@
       "order": 26,
       "gateKind": "event",
       "kind": "gate",
-      "label": "停電で止まった",
-      "lane": "ゲート",
+      "label": "Stopped by a power outage",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "frozen",
       "ready": false,
@@ -426,22 +426,22 @@
       "order": 27,
       "gateKind": "event",
       "kind": "gate",
-      "label": "屋外展示の判断",
-      "lane": "ゲート",
+      "label": "Decide on the outdoor display",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "cancelled",
       "ready": false,
       "derived": false,
       "planned": false,
-      "reason": "公開サンプル用の架空の中止理由です。"
+      "reason": "Fictional reason for cancellation in a public example."
     },
     {
       "id": "P1 03-90-00",
       "order": 28,
       "gateKind": "explicit",
       "kind": "gate",
-      "label": "会期の確定",
-      "lane": "ゲート",
+      "label": "Confirm the exhibition period",
+      "lane": "Gates",
       "owner": "owner-2",
       "state": "pending",
       "ready": false,
@@ -452,7 +452,7 @@
       "id": "P1 issue-1",
       "order": 29,
       "kind": "issue",
-      "label": "作品の貸し出しの条件が未確認",
+      "label": "Conditions for lending works are unconfirmed",
       "lane": "",
       "owner": null,
       "state": "in_progress",
@@ -464,7 +464,7 @@
       "id": "P1 decision-1",
       "order": 30,
       "kind": "decision",
-      "label": "入場料を取るか（未確定 #1）",
+      "label": "Charge admission? (undecided #1)",
       "lane": "",
       "owner": null,
       "state": "in_progress",
@@ -481,7 +481,7 @@
       "kind": "blocks",
       "active": true,
       "certainty": "explicit",
-      "note": "人が台帳の通過条件から読んだ連結"
+      "note": "Relation read by a person from the ledger acceptance conditions"
     },
     {
       "id": "edge-dependency-000002",

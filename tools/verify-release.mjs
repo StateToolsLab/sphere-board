@@ -42,13 +42,41 @@ try{
   if(build.status!==0)throw new Error(build.stderr||build.stdout);
   process.stdout.write(build.stdout);
 
+  const inventory=fs.readFileSync(path.join(R,'FILE_LIST.md'),'utf8');
+  const inventoryPaths=[...inventory.matchAll(/^- `([^`]+)`$/gm)].map(m=>m[1]).sort();
+  const allFiles=walk(R).map(f=>path.relative(R,f).replaceAll('\\','/')).sort();
+  if(JSON.stringify(inventoryPaths)!==JSON.stringify(allFiles))throw new Error('FILE_LIST.md differs from the distribution files.');
+  for(const rel of allFiles)if(rel.includes('__pycache__')||rel.endsWith('.pyc'))throw new Error('Development cache remains: '+rel);
+  for(const line of fs.readFileSync(path.join(R,'verification/BASELINE_SHA256SUMS.txt'),'utf8').trim().split('\n')){
+    const [,expected,rel]=/^([a-f0-9]{64})  (.+)$/.exec(line)||[];
+    if(!rel||sha(fs.readFileSync(path.join(R,rel)))!==expected)throw new Error('Protected baseline file changed: '+rel);
+  }
+  const english=fs.readFileSync(path.join(R,'index.html'),'utf8');
+  const japanese=fs.readFileSync(path.join(R,'ja/index.html'),'utf8');
+  if(/[\u3040-\u30ff\u3400-\u9fff\uf900-\ufaff]/u.test(english))throw new Error('Japanese text remains in English HTML.');
+  if(!english.includes('<html lang="en"')||!japanese.includes('<html lang="ja"'))throw new Error('Viewer language attributes differ.');
+  for(const html of [english,japanese])if(!html.includes('<span class="version">0.6.0</span>'))throw new Error('Viewer version mismatch.');
+  for(const lang of ['en','ja'])for(const file of ['main.js','states.js','template.html'])if(!fs.existsSync(path.join(R,'app',lang,file)))throw new Error('Missing presentation source.');
+  for(const rel of ['docs/viewer-terminology.md','verification/CHANGES.md','verification/TEST_REPORT.md'])if(!fs.existsSync(path.join(R,rel)))throw new Error('Missing release document: '+rel);
+
   const C=require('../app/core.js');
   const S=require('../app/states.js');
   const schema=require('../spec/starter-map.schema.json');
-  for(const f of ['map.json','examples/essay.json','examples/exhibition.json','examples/sample-map.json']){
+  for(const f of ['map.json','ja/map.json',...['','ja/'].flatMap(lang=>['essay','exhibition','sample-map'].map(name=>'examples/'+lang+name+'.json'))]){
     const m=JSON.parse(fs.readFileSync(path.join(R,f),'utf8'));
     const r=C.validateMap(m,schema);
     if(!r.ok)throw new Error('Invalid Starter example: '+f+' '+r.errors.join('; '));
+  }
+
+  const Layout=require('../app/layout.js');
+  for(const lang of ['en','ja']){
+    const labels=require('../app/'+lang+'/states.js');
+    for(const key of [...S.WORK_STATES,...S.GATE_STATES])if(!labels[key]?.name||!labels[key]?.shape)throw new Error('Missing state label/description: '+lang+'/'+key);
+  }
+  for(const name of ['essay','exhibition','sample-map']){
+    const en=JSON.parse(fs.readFileSync(path.join(R,'examples',name+'.json'),'utf8'));
+    const ja=JSON.parse(fs.readFileSync(path.join(R,'examples/ja',name+'.json'),'utf8'));
+    if(JSON.stringify(Layout.layout(en).nodes)!==JSON.stringify(Layout.layout(ja).nodes))throw new Error('Bilingual node geometry differs: '+name);
   }
 
   const geometry=[...S.WORK_STATES.map(k=>S.geometry(k,'work').d),...S.GATE_STATES.map(k=>S.geometry(k,'gate').d)];
@@ -75,7 +103,7 @@ try{
   }
 
   const pkg=JSON.parse(fs.readFileSync(path.join(R,'package.json'),'utf8'));
-  if(pkg.name!=='sphere-board'||pkg.version!=='0.5.1')throw new Error('package.json name/version mismatch');
+  if(pkg.name!=='sphere-board'||pkg.version!=='0.6.0')throw new Error('package.json name/version mismatch');
   if(pkg.license!=='MIT'||pkg.private!==true)throw new Error('package.json license/private mismatch');
 
   const rootLicense=path.join(R,'LICENSE');
@@ -99,7 +127,7 @@ try{
     }
   }
 
-  console.log(`Public release checks: ${lines.length} checksums, Sphere Board 0.5.1 naming, Starter-only files, 21 distinct shapes, MIT + CC BY 4.0 split.`);
+  console.log(`Public release checks: ${lines.length} checksums, Sphere Board 0.6.0 naming, Starter-only files, two reproducible builds, bilingual examples, 21 distinct shapes, preserved baseline, MIT + CC BY 4.0 split.`);
 }catch(e){
   console.error('Verification failed: '+e.message);
   process.exitCode=1;

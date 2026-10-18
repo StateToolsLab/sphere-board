@@ -1,6 +1,7 @@
 {
   "method": "Chromium set_content of generated HTML; local fixture fetch mocked. No browser URL/file navigation tested. Real HTTP tested in Node suite.",
-  "browser": "/usr/bin/chromium",
+  "language": "ja",
+  "browser": "chromium",
   "passed": 38,
   "failed": 0,
   "errors": [],
