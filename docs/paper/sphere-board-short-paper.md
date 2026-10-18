@@ -2,7 +2,7 @@
 
 **Author:** Kiyoshi Deguchi, Independent Researcher (ORCID: 0009-0000-5850-9262)  
 **Copyright holder:** StateToolsLab  
-**Date:** 2026-10-17  
+**Date:** 2026-10-17 (first publication; this revision 2026-10-18)  
 **Version:** 1.1 (revised 2026-10-18; first edition 1.0: 2026-10-17)  
 **License: CC BY 4.0** (this paper and its original schematic; reference implementation: MIT)
 
@@ -95,7 +95,7 @@ Boehm's spiral is risk-driven: its radius represents accumulated cost and its an
 
 This document, written by its author with StateToolsLab as copyright holder, records the stated structure. Version 1.0 was first published on 2026-10-17 together with reference implementation v0.5.1. This version 1.1 is a revision intended for release together with v0.6.0.
 
-The comparison was prepared on **2026-10-07** using targeted web searches and direct source inspection across **thirteen representation families and sixteen external source items** listed as [1–16]. These comprised an institutional exhibition, official software and method documentation, a game manual, one secondary game guide, research-paper sections, a practitioner's roadmap example, and a bibliographic record for Cooper's 1990 paper. Not every long source was read in full; `check.md` identifies access depth and the inspected passages. The search covered the requested families and terms for radial or concentric roadmaps, deployment rings, the spiral model, and staged gates. It was not a systematic literature, patent, or commercial-tool search.
+The comparison was prepared on **2026-10-07** using targeted web searches and direct source inspection across **thirteen representation families and sixteen external source items** listed as [1–16]. These comprised an institutional exhibition, official software and method documentation, a game manual, one secondary game guide, research-paper sections, a practitioner's roadmap example, and a bibliographic record for Cooper's 1990 paper. Not every long source was read in full; `check.md` (`docs/paper/check.md` in [0]) identifies access depth and the inspected passages. The search covered the requested families and terms for radial or concentric roadmaps, deployment rings, the spiral model, and staged gates. It was not a systematic literature, patent, or commercial-tool search.
 
 Within that bounded source set, no inspected example was identified that explicitly combined radius as project-stage order, gates on those stages' outer boundaries, and project work rows inside the bands. This observation concerns the inspected descriptions only; it is not proof of novelty, first use, or superiority. The combined meaning of Figure 1 is an author-defined reading convention grounded in the implementation's geometry, not an externally validated theory of project progress.
 
@@ -153,6 +153,6 @@ Sphere Board（スフィアボード）は、一つのプロジェクトの台�
 
 工程間の進行をゲートで管理する計画では、まだ通過していない最も内側の関連ゲートまでを、現在の到達範囲として読む。その外側は、間にあるゲートを越えると開ける範囲である。ただし、これは地図の読み方であり、v0.6.0 が外側を隠す、暗くする、作業を禁止する機能ではない。次に着手できる珠の印は台帳の Ready を表示するだけで、盤が着手可否を計算するものではない。その範囲では、前提（dependency）を満たし、妨げ（blocks）を一つずつ解消していき、残る条件も満たしたうえで ready=true を台帳に記録することで、新たに着手できる珠が生まれると読む。現在地の印は明示された現在地と未判定ゲートに付き、Ready の珠も現在地の印も複数あり得る。担い手は文字などで別に示される。
 
-自動配置では、状態が変わっても珠の座標は変わらず、形と補助印が変わる。同じ入力を同じ実装で処理すれば同じ配置になり、既存工程への作業追加は、構造を変えない限り他工程の珠を動かさない。派生作業は親の近くから外向きに枝を出し、予定工程は外側の点線の帯になる。編集は台帳側で行い、AIの担い手が作業ごとに更新案を作り、検証と人のレビューを経て反映する運用を想定するが、人による台帳の維持も排除しない。
+自動配置では、状態が変わっても珠の座標は変わらない。モデルでは形と補助印、または色で状態を表し、参照実装 v0.6.0 では形と補助印が変わる。同じ入力を同じ実装で処理すれば同じ配置になり、既存工程への作業追加は、構造を変えない限り他工程の珠を動かさない。派生作業は親の近くから外向きに枝を出し、予定工程は外側の点線の帯になる。編集は台帳側で行い、AIの担い手が作業ごとに更新案を作り、検証と人のレビューを経て反映する運用を想定するが、人による台帳の維持も排除しない。
 
 双六、WBS、ガント、カンバン、Sphere Grid、知識グラフ、マインドマップ、Technology Radar、サンバースト、同心円ロードマップ、リング型デプロイ、スパイラルモデル、Stage-Gate と比較した。この比較は優劣ではなく、それぞれの表現が何を見せるかの違いを記録する。Sphere Grid の現在位置に基づく移動・近接ノードの活性化との対比では、Sphere Board の工程の進行は珠の隣接ではなく外縁ゲートで読む。特にデプロイの環は公開対象を広げる単位であり、Sphere Board（スフィアボード）の環はプロジェクトの工程順である。2026年10月7日に確認した13系統・16出典の範囲では、工程順の半径・外縁のゲート・帯内の作業を明示的に組み合わせた例を特定できなかった。網羅的な新規性調査ではなく、利用者評価も実施していない。本稿は構造の記録であり、有効性や優越性を主張しない。
